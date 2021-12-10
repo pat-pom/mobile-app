@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "OPzRKjpEMDg3bZ4q6k7bRdihOY2bNoNMtNZK3Z7EiYtXA4fdfILvRYJS8ZDEEwI6n8t6y3xlidi4OkaMJaUhCg==",
+  "dgSpecHash": "1yJZj4ZjlVOJbeaLcoZsCc7aEk4JAeHGyF+nxxW6ts7x8JAtm9yTlZ9WdkGIVQZYCKwmiIlSSfwC64mOODRoLA==",
   "success": true,
-  "projectFilePath": "/Users/rluczak/Documents/Projects/mobile-app/antiq-api/antiq-api.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Studia\\mobile-app\\antiq-api\\antiq-api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lucza\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rluczak/Documents/Projects/mobile-app/antiq-api/antiq-api.csproj": {}
+    "D:\\Studia\\mobile-app\\antiq-api\\antiq-api.csproj": {}
   },
   "projects": {
-    "/Users/rluczak/Documents/Projects/mobile-app/antiq-api/antiq-api.csproj": {
+    "D:\\Studia\\mobile-app\\antiq-api\\antiq-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rluczak/Documents/Projects/mobile-app/antiq-api/antiq-api.csproj",
+        "projectUniqueName": "D:\\Studia\\mobile-app\\antiq-api\\antiq-api.csproj",
         "projectName": "antiq-api",
-        "projectPath": "/Users/rluczak/Documents/Projects/mobile-app/antiq-api/antiq-api.csproj",
-        "packagesPath": "/Users/rluczak/.nuget/packages/",
-        "outputPath": "/Users/rluczak/Documents/Projects/mobile-app/antiq-api/obj/",
+        "projectPath": "D:\\Studia\\mobile-app\\antiq-api\\antiq-api.csproj",
+        "packagesPath": "C:\\Users\\lucza\\.nuget\\packages\\",
+        "outputPath": "D:\\Studia\\mobile-app\\antiq-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/rluczak/.config/NuGet/NuGet.Config"
+          "C:\\Users\\lucza\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
