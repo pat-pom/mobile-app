@@ -4,6 +4,7 @@ import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 //import fonts from './src/theme/fonts'
 import Container from './src/containers/Container';
 import PrimaryButton from './src/components/PrimaryButton';
+import SecondaryButton from './src/components/SecondaryButton';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <Container>
           <Text>Welcome! This is antiq project.</Text>
           <StatusBar style="auto" />
-          <PrimaryButton text='PrimaryButton'/>
+          <PrimaryButton text='Chcę dołączyć'/>
+          <SecondaryButton text='Posiadam konto'/>
       </Container>
     </SafeAreaView>
   );

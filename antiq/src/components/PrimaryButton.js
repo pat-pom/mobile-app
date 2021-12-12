@@ -7,27 +7,27 @@ import metrics from '../theme/metrics'
 const PrimaryButton = ({ text, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={styles.btnContainerStyle}>
-        <Text style={styles.btnTextStyle}> {text} </Text>
+      <View style={styles.ContainerStyle}>
+        <Text style={styles.TextStyle}> {text} </Text>
       </View>
     </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
-    btnContainerStyle: {
+    ContainerStyle: {
       backgroundColor: '#18191F',
       paddingVertical: 14,
       paddingHorizontal: 16,
       width: metrics.screenWidth - 48,
       borderRadius: 4
     },
-    btnTextStyle: {
-      color: '#ffffff',
+    TextStyle: {
+      color: '#fff',
       fontSize: 16,
-      lineHeight: 24,
+      lineHeight: 28,
       textAlign: 'center',
-      //fontWeight: fonts.weight.bold,
+      fontWeight: '500',
     }
   })
   

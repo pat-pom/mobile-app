@@ -1,8 +1,8 @@
 const weight = {
-    regular: 'normal',
+    regular: 400,
     medium: 500,
     semiBold: 600,
-    bold: 'bold',
+    bold: 700,
 };
 
 const type = {
