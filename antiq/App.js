@@ -1,27 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 //import fonts from './src/theme/fonts'
-
+import Container from './src/containers/Container';
 import PrimaryButton from './src/components/PrimaryButton';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome! This is antiq project.</Text>
-      <StatusBar style="auto" />
-      <PrimaryButton text='PrimaryButton'/>
-    </View>
+    <SafeAreaView>
+      <Container>
+          <Text>Welcome! This is antiq project.</Text>
+          <StatusBar style="auto" />
+          <PrimaryButton text='PrimaryButton'/>
+      </Container>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 43,
-    //fontWeight: fonts.weight.bold,
+
   },
 });

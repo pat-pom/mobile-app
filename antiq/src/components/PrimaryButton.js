@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#18191F',
       paddingVertical: 14,
       paddingHorizontal: 16,
-      width: metrics.screenWidth,
+      width: metrics.screenWidth - 48,
       borderRadius: 4
     },
     btnTextStyle: {
