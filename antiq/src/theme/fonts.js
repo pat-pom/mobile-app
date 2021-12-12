@@ -13,7 +13,4 @@ const type = {
     primaryFont: 'Poppins'
 };
 
-export default {
-    weight,
-    type
-}
+export default fonts
