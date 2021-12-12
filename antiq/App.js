@@ -5,17 +5,20 @@ import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Container from './src/containers/Container';
 import PrimaryButton from './src/components/PrimaryButton';
 import SecondaryButton from './src/components/SecondaryButton';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Container>
-          <Text>Welcome! This is antiq project.</Text>
-          <StatusBar style="auto" />
-          <PrimaryButton text='Chcę dołączyć'/>
-          <SecondaryButton text='Posiadam konto'/>
-      </Container>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView>
+        <Container>
+            <Text>Welcome! This is antiq project.</Text>
+            <StatusBar style="auto" />
+            <PrimaryButton text='Chcę dołączyć'/>
+            <SecondaryButton text='Posiadam konto'/>
+        </Container>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
