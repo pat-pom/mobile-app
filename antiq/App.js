@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { weight, type } from './src/theme/fonts';
 
 export default function App() {
   return (
@@ -17,5 +18,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: 'Poppins',
+    fontSize: 24,
+    fontWeight: weight.bold,
   },
 });
