@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, Dimensions, StyleSheet } from 'react-native'
-import fonts from '../theme/fonts'
+//import fonts from '../theme/fonts'
 import metrics from '../theme/metrics'
 
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       lineHeight: 24,
       textAlign: 'center',
-      fontWeight: fonts.weight.bold
+      //fontWeight: fonts.weight.bold,
     }
   })
   

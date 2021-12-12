@@ -2,7 +2,7 @@ const weight = {
     regular: 'normal',
     medium: 500,
     semiBold: 600,
-    bold: 'bold'
+    bold: 'bold',
 };
 
 const type = {
@@ -10,7 +10,7 @@ const type = {
     // fontSemiBold: 'Poppins-SemiBold',
     // fontMedium: 'Poppins-Medium',
     // fontRegular: 'Poppins-Regular'
-    primaryFont: 'Poppins'
+    primaryFont: 'Poppins',
 };
 
 export default fonts

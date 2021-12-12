@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import fonts from './src/theme/fonts'
+//import fonts from './src/theme/fonts'
 
 import PrimaryButton from './src/components/PrimaryButton';
 
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 24,
-    fontWeight: fonts.weight.medium,
+    fontSize: 43,
+    //fontWeight: fonts.weight.bold,
   },
 });
