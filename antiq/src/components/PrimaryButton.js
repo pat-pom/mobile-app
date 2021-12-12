@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, TouchableOpacity, Dimensions, StyleSheet } from 'react-native'
 import {weight, type} from '../theme/fonts'
-const width = Dimensions.get('window').width
+import metrics from '../theme/metrics'
 
 
 const PrimaryButton = ({ text, onPress }) => {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#18191F',
       paddingVertical: 14,
       paddingHorizontal: 16,
-      width: 327,
+      width: metrics.screenWidth,
       borderRadius: 4
     },
     btnTextStyle: {
@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
       fontSize: 16,
       lineHeight: 24,
       textAlign: 'center',
-      fontFamily: type,
     }
   })
   
