@@ -6,7 +6,7 @@ const weight = {
 }
 
 const type = {
-    fontBold: './fonts/Poppins-Bold.ttf',
+    fontBold: 'Poppins-Bold',
     fontSemiBold: 'Poppins-SemiBold',
     fontMedium: 'Poppins-Medium',
     fontRegular: 'Poppins-Regular'
