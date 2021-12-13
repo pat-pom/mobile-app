@@ -5,6 +5,7 @@ import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Container from './src/containers/Container';
 import PrimaryButton from './src/components/PrimaryButton';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import SecondaryButton from './src/components/SecondaryButton';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -21,6 +22,8 @@ export default function App() {
       </SafeAreaView>
     </NavigationContainer>
 =======
+=======
+>>>>>>> parent of df7492a (Primary & Secondary button styles)
 
 export default function App() {
   return (
