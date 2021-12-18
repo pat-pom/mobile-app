@@ -24,18 +24,24 @@ namespace antiq_api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<DataContext>();
+
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "antiq_api", Version = "v1" });
             });
+
             services.AddCors();
+            
             services.AddScoped<ICategoryService, CategoryService>();
         }
 
