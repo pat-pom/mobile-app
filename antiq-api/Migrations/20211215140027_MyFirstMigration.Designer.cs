@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using antiq_api.Entities;
+using antiq_api.Helpers;
 
 namespace antiq_api.Migrations
 {
-    [DbContext(typeof(AntiqDbContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20211215140027_MyFirstMigration")]
     partial class MyFirstMigration
     {

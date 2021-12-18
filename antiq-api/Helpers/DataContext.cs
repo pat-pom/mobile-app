@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using antiq_api.Entities;
 
-namespace antiq_api.Entities {
-  public class AntiqDbContext : DbContext {
-    public AntiqDbContext(DbContextOptions<AntiqDbContext> options) : base(options) {}
+namespace antiq_api.Helpers {
+  public class DataContext : DbContext {
+    public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using antiq_api.Entities;
+using antiq_api.Helpers;
 
 namespace antiq_api.Migrations
 {
-    [DbContext(typeof(AntiqDbContext))]
+    [DbContext(typeof(DataContext))]
     partial class AntiqDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
