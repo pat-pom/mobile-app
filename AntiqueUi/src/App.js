@@ -1,16 +1,24 @@
 import Constants from 'expo-constants';
-import { StyleSheet, ScrollView, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet, View, Text } from 'react-native';
 
-import { TopBar } from './components/TopBar';
+import { Home } from './screens/Home';
+import { AddProduct } from './screens/AddProduct';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <ScrollView>
+    <NavigationContainer>
       <View style={styles.container}>
         <View style={styles.statusBar} />
-        <TopBar viewName="Dodaj ogłoszenie" />
+        <Stack.Navigator>
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='AddProduct' component={AddProduct} options={{ title: "Dodaj ogłoszenie" }} />
+        </Stack.Navigator>
       </View>
-    </ScrollView>
+    </NavigationContainer>
   );
 }
 
