@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from "react-native"
+import Icon from 'react-native-vector-icons/AntDesign';
 
 export const TopBar = ({ viewName }) => {
   return (
     <View style={styles.container}>
-      <Text>Left</Text>
+      <Icon name="arrowleft" size={30} />
       <Text style={styles.title}>{viewName}</Text>
       <Text></Text>
     </View>

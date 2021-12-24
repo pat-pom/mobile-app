@@ -296,6 +296,8 @@ PODS:
     - React-Core
     - React-RCTImage
     - TOCropViewController
+  - RNVectorIcons (9.0.0):
+    - React-Core
   - TOCropViewController (2.6.0)
   - Yoga (1.14.0)
 
@@ -339,6 +341,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -421,6 +424,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNImageCropPicker:
     :path: "../node_modules/react-native-image-crop-picker"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -463,6 +468,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 493d9abb8b23c3f84e19ae221eeba92cadcb70dc
   ReactCommon: 8fea6422328e2fc093e25c9fac67adbcf0f04fb4
   RNImageCropPicker: 448d3c6e923fde3466b49caf3c2457c2a0ba02dd
+  RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   Yoga: e6ecf3fa25af9d4c87e94ad7d5d292eedef49749
 
