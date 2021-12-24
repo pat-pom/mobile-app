@@ -8,7 +8,7 @@ export default function App() {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.statusBar} />
-        <TopBar />
+        <TopBar viewName="Dodaj ogłoszenie" />
       </View>
     </ScrollView>
   );
