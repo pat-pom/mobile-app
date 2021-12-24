@@ -1,5 +1,5 @@
 import Constants from 'expo-constants';
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet, View, Text } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
@@ -9,9 +9,17 @@ import { AddProduct } from './screens/AddProduct';
 
 const Stack = createNativeStackNavigator();
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'rgb(255, 255, 255)',
+  }
+}
+
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <View style={styles.container}>
         <View style={styles.statusBar} />
         <Stack.Navigator
@@ -21,7 +29,13 @@ export default function App() {
             headerShadowVisible: false,
           })}
         >
-          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen
+            name='Home'
+            component={Home}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen
             name='AddProduct'
             component={AddProduct}
