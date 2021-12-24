@@ -1,7 +1,7 @@
 import Constants from 'expo-constants';
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, useColorScheme } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
 
 import { Home } from './screens/Home';
@@ -18,8 +18,10 @@ const MyTheme = {
 }
 
 export default function App() {
+  const scheme = useColorScheme();
+
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : MyTheme}>
       <View style={styles.container}>
         <View style={styles.statusBar} />
         <Stack.Navigator
