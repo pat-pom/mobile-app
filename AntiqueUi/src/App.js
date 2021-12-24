@@ -1,8 +1,8 @@
 import Constants from 'expo-constants';
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet, View, Text, useColorScheme } from 'react-native';
 import Icon from "react-native-vector-icons/AntDesign";
+import { StyleSheet, View, useColorScheme } from 'react-native';
 
 import { Home } from './screens/Home';
 import { AddProduct } from './screens/AddProduct';
