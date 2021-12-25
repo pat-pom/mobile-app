@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ScrollView, Text, View, Image, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, TouchableOpacity, Button, FlatList } from 'react-native';
 import { ActionSheet } from 'react-native-cross-actionsheet';
 import ImagePicker from 'react-native-image-crop-picker';
 
@@ -22,7 +22,7 @@ export const AddProduct = () => {
           ImagePicker.openPicker({
             multiple: true,
           }).then(images => {
-            setImages(images);
+            setImages(prevState => [...prevState, ...images]);
           });
         } else if (buttonIndex === 2) {
           ImagePicker.openCamera({
@@ -30,7 +30,7 @@ export const AddProduct = () => {
             height: 400,
             cropping: true,
           }).then(image => {
-            setImages(image)
+            setImages(prevState => [...prevState, ...image]);
           });
         }
       }
@@ -46,13 +46,23 @@ export const AddProduct = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      {images.map(image => (
-        <Image style={{
-          width: 51,
-          height: 51,
-          resizeMode: 'contain'
-        }} key={image.localIdentifier} source={{ uri: image.path }} />
-      ))}
+      <FlatList
+        horizontal={true}
+        data={images}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: 20
+        }}
+        keyExtractor={item => item.filename}
+        renderItem={({ item }) => (
+          <TouchableOpacity activeOpacity={0.9}>
+            <Image
+              style={styles.thumbnails}
+              source={{ uri: item.path }}
+            />
+          </TouchableOpacity>
+        )}
+      />
     </ScrollView>
   )
 }
@@ -79,5 +89,11 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     borderRadius: 5,
     borderColor: '#cccccc',
+  },
+  thumbnails: {
+    width: 100,
+    height: 100,
+    marginRight: 5,
+    borderRadius: 16,
   }
 });

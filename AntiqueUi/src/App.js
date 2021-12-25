@@ -42,7 +42,7 @@ export default function App() {
             name='AddProduct'
             component={AddProduct}
             options={{
-              title: "Dodaj ogłoszenie",
+              title: "Add advertisement",
             }}
           />
         </Stack.Navigator>
