@@ -1,21 +1,37 @@
+import React, { useState } from 'react';
 import { StyleSheet, ScrollView, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 import { ActionSheet } from 'react-native-cross-actionsheet';
+import ImagePicker from 'react-native-image-crop-picker';
 
 import AddPhotoPlaceholder from "../assets/images/AddPhotoPlaceholder.png";
 
 export const AddProduct = () => {
+  const [images, setImages] = useState([]);
+
   const openActionSheet = () =>
     ActionSheet.showActionSheetWithOptions(
       {
+        title: "Upload photos",
+        message: "Choose your item pictures",
         options: ["Cancel", "Choose from library", "Take a picture"],
         cancelButtonIndex: 0,
         userInterfaceStyle: 'light'
       },
       buttonIndex => {
         if (buttonIndex === 1) {
-          alert(buttonIndex)
+          ImagePicker.openPicker({
+            multiple: true,
+          }).then(images => {
+            setImages(images);
+          });
         } else if (buttonIndex === 2) {
-          alert(buttonIndex)
+          ImagePicker.openCamera({
+            width: 300,
+            height: 400,
+            cropping: true,
+          }).then(image => {
+            setImages(image)
+          });
         }
       }
     );
@@ -26,10 +42,17 @@ export const AddProduct = () => {
         <TouchableOpacity style={styles.imageContainer} onPress={openActionSheet}>
           <Image style={styles.image} source={AddPhotoPlaceholder} />
           <Text style={styles.placeholder}>
-            Prześlij JPG, JPEG, PNG or HEIC do 10MB
+            Upload JPG, JPEG, PNG or HEIC up to 10MB
           </Text>
         </TouchableOpacity>
       </View>
+      {images.map(image => (
+        <Image style={{
+          width: 51,
+          height: 51,
+          resizeMode: 'contain'
+        }} key={image.localIdentifier} source={{ uri: image.path }} />
+      ))}
     </ScrollView>
   )
 }
