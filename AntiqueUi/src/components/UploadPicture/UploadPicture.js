@@ -6,7 +6,7 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { THUMBNAIL_SIZE, THUMBNAIL_SPACEING } from './consts';
 import AddPhotoPlaceholder from "../../assets/images/AddPhotoPlaceholder.png";
 
-export const UploadPicture = ({ images, setImages, maxImages }) => {
+export const UploadPicture = ({ images, setImages, maxImages, }) => {
   const openUploadActionSheet = () =>
     ActionSheet.showActionSheetWithOptions(
       {
@@ -58,7 +58,7 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
       <TouchableOpacity style={styles.imageContainer} onPress={openUploadActionSheet}>
         <Image style={styles.image} source={AddPhotoPlaceholder} />
         <Text style={styles.placeholder}>
-          Upload JPG, JPEG, PNG or HEIC up to 10MB
+          Upload pictures up to 20MB
         </Text>
         <Text style={styles.placeholder}>
           Max 15 pictures
