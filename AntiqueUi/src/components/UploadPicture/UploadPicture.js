@@ -6,7 +6,7 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { THUMBNAIL_SIZE, THUMBNAIL_SPACEING } from './consts';
 import AddPhotoPlaceholder from "../../assets/images/AddPhotoPlaceholder.png";
 
-export const UploadPicture = ({ images, setImages, maxImages, }) => {
+export const UploadPicture = ({ images, setImages, maxImages }) => {
   const openUploadActionSheet = () =>
     ActionSheet.showActionSheetWithOptions(
       {
@@ -20,7 +20,6 @@ export const UploadPicture = ({ images, setImages, maxImages, }) => {
         if (buttonIndex === 1) {
           ImagePicker.openPicker({
             multiple: true,
-            includeBase64: true,
             maxFiles: maxImages,
           }).then(images => {
             setImages(prevState => [...prevState, ...images]);
