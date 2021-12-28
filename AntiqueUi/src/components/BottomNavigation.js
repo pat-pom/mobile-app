@@ -9,11 +9,15 @@ const Tab = createBottomTabNavigator();
 
 export function BottomNavigation() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator  
+    screenOptions= {{
+        tabBarActiveTintColor: '#000',
+        tabBarInactiveTintColor: '#969BAB',
+      }}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="AddProduct" component={AddProduct} />
-      <Tab.Screen name="Chat" component={Chat} />
+      <Tab.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3 }}/>
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
