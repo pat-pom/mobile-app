@@ -6,8 +6,9 @@ import { StyleSheet, View, useColorScheme } from 'react-native';
 
 import { Home } from './screens/Home';
 import { AddProduct } from './screens/AddProduct';
+import { BottomNavigation } from './components/BottomNavigation';
 
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
 
 const MyTheme = {
   ...DefaultTheme,
@@ -20,11 +21,11 @@ const MyTheme = {
 export default function App() {
   const scheme = useColorScheme();
 
-  return (
+  return( 
     <NavigationContainer theme={scheme === 'dark' ? DarkTheme : MyTheme}>
       <View style={styles.container}>
         <View style={styles.statusBar} />
-        <Stack.Navigator
+        {/* <Stack.Navigator
           screenOptions={({ navigation }) => ({
             headerStyle: styles.header,
             headerLeft: () => navigation.canGoBack() && <Icon name="arrowleft" size={26} onPress={() => navigation.goBack()} />,
@@ -45,8 +46,9 @@ export default function App() {
               title: "Add advertisement",
             }}
           />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
       </View>
+      <BottomNavigation/>
     </NavigationContainer>
   );
 }
