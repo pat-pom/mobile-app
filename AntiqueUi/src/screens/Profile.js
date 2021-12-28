@@ -1,13 +1,9 @@
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
-export const Home = ({ navigation }) => {
+export const Profile = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Add Product"
-        onPress={() => navigation.navigate('AddProduct')}
-      />
+      <Text>Profile Screen</Text>
     </View>
   )
 }
