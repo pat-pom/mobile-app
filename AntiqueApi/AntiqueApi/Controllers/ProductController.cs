@@ -3,6 +3,7 @@ using AntiqueApi.DTO;
 using AntiqueApi.Interfaces;
 using AntiqueApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AntiqueApi.Controllers
 {
@@ -19,6 +20,14 @@ namespace AntiqueApi.Controllers
     {
       _blobService = blobService;
       _antiqueDbContext = antiqueDbContext;
+    }
+
+    [HttpGet]
+    public IActionResult GetAllProducts()
+    {
+      var products = _antiqueDbContext.Products.Include(x => x.Images).ToList();
+
+      return Ok(products);
     }
 
     [HttpPost]
