@@ -5,7 +5,7 @@ namespace AntiqueApi.Models
     public Guid Id { get; set; }
     public string? ImageName { get; set; }
     public string? ImageType { get; set; }
-    public string? ImageUrl { get; set; }
-    public int ImageSize { get; set; }
+    public Uri? ImageUrl { get; set; }
+    public long ImageSize { get; set; }
   }
 }

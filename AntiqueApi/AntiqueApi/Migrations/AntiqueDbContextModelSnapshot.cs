@@ -25,7 +25,6 @@ namespace AntiqueApi.Migrations
             modelBuilder.Entity("AntiqueApi.Models.GeolocationModel", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("Latitude")
@@ -48,8 +47,8 @@ namespace AntiqueApi.Migrations
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageSize")
-                        .HasColumnType("int");
+                    b.Property<long>("ImageSize")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("ImageType")
                         .HasColumnType("nvarchar(max)");
@@ -82,11 +81,8 @@ namespace AntiqueApi.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid?>("LocalizationId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -105,9 +101,18 @@ namespace AntiqueApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocalizationId");
-
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("AntiqueApi.Models.GeolocationModel", b =>
+                {
+                    b.HasOne("AntiqueApi.Models.ProductModel", "Product")
+                        .WithOne("Localization")
+                        .HasForeignKey("AntiqueApi.Models.GeolocationModel", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("AntiqueApi.Models.ImagesModel", b =>
@@ -119,16 +124,10 @@ namespace AntiqueApi.Migrations
 
             modelBuilder.Entity("AntiqueApi.Models.ProductModel", b =>
                 {
-                    b.HasOne("AntiqueApi.Models.GeolocationModel", "Localization")
-                        .WithMany()
-                        .HasForeignKey("LocalizationId");
-
-                    b.Navigation("Localization");
-                });
-
-            modelBuilder.Entity("AntiqueApi.Models.ProductModel", b =>
-                {
                     b.Navigation("Images");
+
+                    b.Navigation("Localization")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

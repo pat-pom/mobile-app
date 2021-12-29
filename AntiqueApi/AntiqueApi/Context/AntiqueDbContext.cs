@@ -10,5 +10,13 @@ namespace AntiqueApi.Context
     public DbSet<ProductModel>? Products { get; set; }
 
     public AntiqueDbContext(DbContextOptions<AntiqueDbContext> options) : base(options) { }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      modelBuilder.Entity<ProductModel>()
+          .HasOne(a => a.Localization)
+          .WithOne(b => b.Product)
+          .HasForeignKey<GeolocationModel>(b => b.Id);
+    }
   }
 }

@@ -12,7 +12,7 @@ namespace AntiqueApi.Models
     [StringLength(50)]
     public string? Title { get; set; }
     [Required]
-    [StringLength(100)]
+    [StringLength(500)]
     public string? Description { get; set; }
     [Required]
     public string? Category { get; set; }
@@ -21,6 +21,7 @@ namespace AntiqueApi.Models
     public decimal Price { get; set; }
     [Required]
     public string? State { get; set; }
+    [Required]
     public GeolocationModel? Localization { get; set; }
     [DataType(DataType.Date)]
     public DateTime CreatedDate { get; set; }
