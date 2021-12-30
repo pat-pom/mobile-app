@@ -23,11 +23,21 @@ namespace AntiqueApi.Controllers
     }
 
     [HttpGet]
-    public IActionResult GetAllProducts()
+    public async Task<ActionResult<IEnumerable<ProductModel>>> GetAllProducts()
     {
-      var products = _antiqueDbContext.Products.Include(x => x.Images).ToList();
+      var products = await _antiqueDbContext.Products.Include(x => x.Images).ToListAsync();
 
       return Ok(products);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<ProductModel>> GetProduct(Guid id)
+    {
+      var product = await _antiqueDbContext.Products.Include(x => x.Images).FirstOrDefaultAsync(x => x.Id == id);
+
+      if (product == null) return NotFound();
+
+      return Ok(product);
     }
 
     [HttpPost]
@@ -70,6 +80,19 @@ namespace AntiqueApi.Controllers
       await _antiqueDbContext.SaveChangesAsync();
 
       return Ok(productModel);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<ProductModel>> DeleteProduct(Guid id)
+    {
+      var product = await _antiqueDbContext.Products.FindAsync(id);
+
+      if (product == null) return NotFound();
+
+      _antiqueDbContext.Products.Remove(product);
+      await _antiqueDbContext.SaveChangesAsync();
+
+      return Ok(product);
     }
   }
 }
