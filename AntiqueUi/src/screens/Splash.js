@@ -24,7 +24,6 @@ export const Splash = () => {
 
 const styles = StyleSheet.create({
   header: {
-    marginLeft: "auto",
     height: metrics.screenHeight - 173,
     justifyContent: "center",
     alignItems: "center"
