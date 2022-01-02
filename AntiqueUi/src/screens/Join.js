@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#18191F",
     lineHeight: 28,
-    fontWeight: 500
+    fontWeight: "500"
   },
   napis1: {
     fontSize: 16,
