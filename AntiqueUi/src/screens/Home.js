@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { Dimensions } from 'react-native';
 const {width, height} = Dimensions.get('window');
@@ -10,7 +10,7 @@ const metrics = {
 
 export const Home = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Hej Aleks</Text>
       <TextInput
         style={{
@@ -28,7 +28,7 @@ export const Home = ({ navigation }) => {
         }}
         placeholder="Search"
       />
-    </View>
+    </SafeAreaView>
   )
 }
 

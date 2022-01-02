@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Image, Text, FlatList, StyleSheet } from "react-native";
+import { TouchableOpacity, Image, Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
 import { ActionSheet } from 'react-native-cross-actionsheet';
 import ImagePicker from 'react-native-image-crop-picker';
 
@@ -53,7 +53,7 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
     );
 
   return (
-    <>
+    <SafeAreaView>
       <TouchableOpacity style={styles.imageContainer} onPress={openUploadActionSheet}>
         <Image style={styles.image} source={AddPhotoPlaceholder} />
         <Text style={styles.placeholder}>
@@ -80,7 +80,7 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
           </TouchableOpacity>
         )}
       />
-    </>
+    </SafeAreaView>
   )
 }
 

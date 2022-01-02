@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 export const Chat = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>Chat Screen</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 

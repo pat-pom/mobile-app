@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { Button, StyleSheet, View, TouchableOpacity, Text, SafeAreaView } from "react-native";
 import { Dimensions } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
@@ -10,7 +10,7 @@ const metrics = {
 
 export const Join = () => {
   return (
-    <View>
+    <SafeAreaView>
       <View style={styles.top}>
         <TouchableOpacity
           style={styles.skip}
@@ -29,7 +29,7 @@ export const Join = () => {
           <Text style={styles.napis}>Posiadam konto</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

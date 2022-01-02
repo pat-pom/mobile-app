@@ -1,5 +1,5 @@
 import React from "react";
-import {  Image, StyleSheet, View } from "react-native";
+import {  Image, StyleSheet, View, SafeAreaView } from "react-native";
 import { Dimensions } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
@@ -11,14 +11,14 @@ const metrics = {
 
 export const Splash = () => {
   return (
-    <View>
+    <SafeAreaView>
       <View style={styles.header}>
         <Image
           source={require("../assets/images/icon.png")}
           style={styles.icon}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

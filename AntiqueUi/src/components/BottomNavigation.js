@@ -19,6 +19,7 @@ export function BottomNavigation() {
         tabBarShowLabel: false,
         tabBarActiveTintColor: '#000',
         tabBarInactiveTintColor: '#969BAB',
+        headerShown: false,
         }}>
       <Tab.Screen name="Home" component={Home} />
       {/* <Tab.Screen name="Search" component={Search} /> */}

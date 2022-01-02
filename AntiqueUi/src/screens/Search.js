@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 
 import { Dimensions } from 'react-native';
@@ -10,7 +10,7 @@ const metrics = {
 }
 export const Search = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TextInput
         style={{
           height: 52,
@@ -27,7 +27,7 @@ export const Search = ({ navigation }) => {
         }}
         placeholder="Search"
       />
-    </View>
+    </SafeAreaView>
   )
 }
 
