@@ -7,6 +7,7 @@ import { Search } from '../screens/Search';
 import { Chat } from '../screens/Chat';
 import { Join } from '../screens/Join';
 import { Login } from '../screens/Login';
+import { Register } from '../screens/Register';
 import { Camera } from 'react-feather';
 import { StyleSheet } from 'react-native';
 
@@ -27,6 +28,7 @@ export function BottomNavigation() {
       <Tab.Screen name="Splash" component={Splash} />
       <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />
+      <Tab.Screen name="Register" component={Register} />
       <Tab.Screen name="AddProduct" component={AddProduct}  style={styles.callToAction}  />
       <Tab.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3 }}/>
       <Tab.Screen name="Profile" component={Profile} />

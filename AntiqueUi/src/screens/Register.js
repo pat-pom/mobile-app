@@ -17,7 +17,7 @@ const metrics = {
   screenHeight: width < height ? height : width,
 }
 
-export const Login = () => {
+export const Register = () => {
   return (
     <SafeAreaView>
       <View style={styles.top}>
@@ -32,16 +32,14 @@ export const Login = () => {
       </View>
 
       <View style={styles.middle}>
-        <TextInput style={styles.input} placeholder="E-mail address" />
-        <TextInput style={styles.input} placeholder="Password" />
-        <TouchableOpacity onPress={() => {}}>
-          <Text style={{ marginLeft: "-60%", marginTop: 5 }}>
-            Nie pamiętasz hasła?
-          </Text>
+        <TouchableOpacity style={styles.btn} onPress={() => {}}>
+          <Text style={styles.napis}>Kontynuuj z Google</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btn1} onPress={() => {}}>
-          <Text style={styles.napis1}>Zaloguj się</Text>
+        <TouchableOpacity style={styles.btn} onPress={() => {}}>
+          <Text style={styles.napis}>Kontynuuj z Facebook</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={() => {}}>
+          <Text style={styles.napis}>Kontynuuj z Apple</Text>
         </TouchableOpacity>
       </View>
 
@@ -56,7 +54,7 @@ export const Login = () => {
         />
         <View>
           <Text style={{ width: "100%", textAlign: "center", padding: 10 }}>
-            Lub
+            Lub za pomocą adresu e-mail
           </Text>
         </View>
         <View
@@ -70,27 +68,18 @@ export const Login = () => {
       </View>
 
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Google</Text>
+        <TextInput style={styles.input} placeholder="E-mail address" />
+        <TextInput style={styles.input} placeholder="Password" />
+        <TouchableOpacity onPress={() => {}}>
+          <Text style={{ marginLeft: "-60%", marginTop: 5 }}>
+            Nie pamiętasz hasła?
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Facebook</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Apple</Text>
+
+        <TouchableOpacity style={styles.btn1} onPress={() => {}}>
+          <Text style={styles.napis1}>Załóż konto</Text>
         </TouchableOpacity>
       </View>
-
-      <Text
-        style={{
-          width: "80%",
-          textAlign: "center",
-          marginLeft: 40,
-          fontSize: 12
-        }}
-      >
-        Logując się akceptujesz Regulamin Antique Sp. z.o.o.
-      </Text>
     </SafeAreaView>
   );
 }
@@ -101,11 +90,11 @@ const styles = StyleSheet.create({
     height: 150
   },
   middle: {
-    height: 300,
+    height: 252,
     alignItems: "center"
   },
   bottom: {
-    height: 250,
+    height: 410,
     alignItems: "center"
   },
   btn: {
@@ -147,4 +136,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default Register;
