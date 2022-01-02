@@ -11,7 +11,7 @@ const metrics = {
 
 export const Splash = () => {
   return (
-    <View style={styles.app}>
+    <View>
       <View style={styles.header}>
         <Image
           source={require("../assets/images/icon.png")}
@@ -23,17 +23,11 @@ export const Splash = () => {
 }
 
 const styles = StyleSheet.create({
-  app: {
-    marginHorizontal: "auto",
-    maxWidth: metrics.screenWidth-48
-  },
   header: {
-    padding: 20
-  },
-  icon: {
-    width: 126,
-    height: 173,
-    top: 319
+    marginLeft: "auto",
+    height: metrics.screenHeight - 173,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 

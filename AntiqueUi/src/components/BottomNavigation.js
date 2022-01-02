@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from '../screens/Home';
 import { AddProduct } from '../screens/AddProduct';
 import { Profile } from '../screens/Profile';
+import { Splash } from '../screens/Splash';
 import { Search } from '../screens/Search';
 import { Chat } from '../screens/Chat';
 import { Camera } from 'react-feather';
@@ -19,7 +20,8 @@ export function BottomNavigation() {
         tabBarInactiveTintColor: '#969BAB',
         }}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Search" component={Search} />
+      {/* <Tab.Screen name="Search" component={Search} /> */}
+      <Tab.Screen name="Splash" component={Splash} />
       <Tab.Screen name="AddProduct" component={AddProduct}  style={styles.callToAction}  />
       <Tab.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3 }}/>
       <Tab.Screen name="Profile" component={Profile} />
