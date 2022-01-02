@@ -13,15 +13,10 @@ export const Join = () => {
     <View>
       <View style={styles.top}>
         <TouchableOpacity
-          style={{
-            alignSelf: "flex-end",
-            marginRight: 10,
-            marginTop: 50,
-            textDecorationLine: "underline"
-          }}
+          style={styles.skip}
           onPress={() => {}}
         >
-          <Text style={styles.skip}>SKIP</Text>
+          <Text>SKIP</Text>
         </TouchableOpacity>
       </View>
 
@@ -44,37 +39,45 @@ const styles = StyleSheet.create({
     backgroundColor: "#969BAB"
   },
   skip: {
-    fontSize: 20
+    fontSize: 20,
+    alignSelf: "flex-end",
+            marginRight: 10,
+            marginTop: 50,
+            textDecorationLine: "underline"
   },
   btn1: {
-    width: "100%",
-    height: 50,
-    marginTop: 30,
-    borderRadius: 5,
+    width: metrics.screenWidth - 48,
+    // height: 50,
+    // marginTop: 30,
+    borderRadius: 4,
     backgroundColor: "#18191F",
-    borderStyle: "solid",
-    borderWidth: 2,
-    padding: 6
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 16,
+    paddingRight: 16
   },
   btn: {
-    width: "100%",
-    height: 50,
-    marginTop: 30,
-    borderRadius: 3,
+    width: metrics.screenWidth - 48,
+    // height: 50,
+    // marginTop: 30,
+    borderRadius: 4,
     backgroundColor: "white",
-    borderStyle: "solid",
-    borderWidth: 2,
-    padding: 6
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 16,
+    paddingRight: 16
   },
   napis: {
-    fontSize: 20,
-    textAlign: "center",
-    padding: "auto"
+    fontSize: 16,
+    color: "#18191F",
+    lineHeight: 28,
+    fontWeight: 500
   },
   napis1: {
-    fontSize: 20,
+    fontSize: 16,
     color: "white",
-    textAlign: "center"
+    lineHeight: 28,
+    fontWeight: 500
   },
   bottom: {
     padding: 24,
