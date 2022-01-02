@@ -39,11 +39,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#969BAB"
   },
   skip: {
-    fontSize: 20,
+    fontSize: 16,
     alignSelf: "flex-end",
-            marginRight: 10,
-            marginTop: 50,
-            textDecorationLine: "underline"
+    marginRight: 24,
+    marginTop: 48,
+    textDecorationLine: "underline",
+    lineHeight: 24
   },
   btn1: {
     width: metrics.screenWidth - 48,
@@ -71,13 +72,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#18191F",
     lineHeight: 28,
-    fontWeight: "500"
+    fontWeight: "500",
+    textAlign: "center"
   },
   napis1: {
     fontSize: 16,
     color: "white",
     lineHeight: 28,
-    fontWeight: 500
+    fontWeight: "500",
+    textAlign: "center"
   },
   bottom: {
     padding: 24,
