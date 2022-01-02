@@ -18,20 +18,14 @@ export function BottomNavigation() {
   return (
     <Tab.Navigator
     style={styles.container}  
-    // screenOptions= {{
-    //     tabBarShowLabel: false,
-    //     tabBarActiveTintColor: '#000',
-    //     tabBarInactiveTintColor: '#969BAB',
-    //     headerShown: false,
-    //     }}
     screenOptions={({ route }) => ({
+      headerShown: false,
+      tabBarShowLabel: false,
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
 
         if (route.name === 'Home') {
-          iconName = focused
-            ? 'home'
-            : 'home';
+          iconName = focused ? 'home' : 'home';
         } else if (route.name === 'Chat') {
           iconName = focused ? 'message-circle' : 'message-circle';
         }
@@ -47,8 +41,8 @@ export function BottomNavigation() {
 
         return <Feather name={iconName} size={size} color={color} />;
       },
-      tabBarActiveTintColor: 'black',
-      tabBarInactiveTintColor: 'gray',
+      tabBarActiveTintColor: '#474A57',
+      tabBarInactiveTintColor: '#969BAB',
     })}
     >
       <Tab.Screen name="Home" component={Home} />
