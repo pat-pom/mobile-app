@@ -1,19 +1,18 @@
-import { TouchableOpacity ,StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-native';
+import { Keyboard, TouchableOpacity ,StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { Dimensions } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-
 const {width, height} = Dimensions.get('window');
-
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
-}
+};
+
 
 export const Input = ({ navigation }) => {
+  
   return (
       <View style={styles.inputWrapper}>
       <TextInput
