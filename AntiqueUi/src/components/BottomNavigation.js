@@ -18,7 +18,15 @@ export function BottomNavigation() {
   return (
     <Tab.Navigator
     style={styles.container}  
-    screenOptions={({ route }) => ({
+    screenOptions={({ route, navigation }) => ({
+      headerTitleStyle: {
+        fontSize: 18,
+        lineHeight: 28,
+        color: "#18191F",
+        fontWeight: "500"
+      },
+      headerLeft: () => navigation.canGoBack() && <Feather name="arrow-left" size={24} onPress={() => navigation.goBack()} style={{marginLeft: 24}} />,
+      headerShadowVisible: false,
       headerShown: false,
       tabBarShowLabel: false,
       tabBarIcon: ({ focused, color, size }) => {
@@ -53,7 +61,7 @@ export function BottomNavigation() {
       <Tab.Screen name="Register" component={Register} /> */}
       <Tab.Screen name="AddProduct" component={AddProduct}  style={styles.callToAction}  />
       <Tab.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3 }}/>
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Profile" component={Profile} options={{headerShown: true}}  />
     </Tab.Navigator>
   );
 }
@@ -64,5 +72,8 @@ const styles = StyleSheet.create({
     },
     callToAction: {
 
+    },
+    header: {
+      color: "red"
     }
   });

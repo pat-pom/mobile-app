@@ -23,14 +23,10 @@ const MyTheme = {
 
 export default function App() {
   const scheme = useColorScheme();
-
   return( 
-    
     <NavigationContainer theme={scheme === 'dark' ? DarkTheme : MyTheme}>
-    
-    <BottomNavigation/>
+      <BottomNavigation/>
     </NavigationContainer>
-    
   );
 }
 
