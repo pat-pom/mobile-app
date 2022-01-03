@@ -3,6 +3,7 @@ import { Home } from '../screens/Home';
 import { AddProduct } from '../screens/AddProduct';
 import { Profile } from '../screens/Profile';
 import { Splash } from '../screens/Splash';
+import { Notifications } from '../screens/Notifications';
 import { Search } from '../screens/Search';
 import { Chat } from '../screens/Chat';
 import { Join } from '../screens/Join';
@@ -54,6 +55,7 @@ export function BottomNavigation() {
     })}
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Notifications" component={Notifications} options={{headerShown: true, tabBarShowLabel: false}}/>
       <Tab.Screen name="Search" component={Search} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />

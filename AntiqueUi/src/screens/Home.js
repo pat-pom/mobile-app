@@ -16,7 +16,7 @@ export const Home = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Hej Aleks</Text>
-        <TouchableOpacity style={styles.bell}  onPress={() => navigation.navigate('Notifications')}>
+        <TouchableOpacity style={styles.bell}  onPress={() => navigation.navigate("Notifications")}>
           <Feather name="bell" size={24}/>
         </TouchableOpacity>
       </View>
