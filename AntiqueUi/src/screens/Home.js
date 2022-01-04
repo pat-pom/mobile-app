@@ -1,4 +1,4 @@
-import { TouchableOpacity ,StyleSheet, Text, View, Button, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { TouchableOpacity, FlatList, StyleSheet, Text, View, Button, TextInput, SafeAreaView, ScrollView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { Dimensions } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
@@ -17,7 +17,7 @@ const metrics = {
 export const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
         <Text style={styles.title}>Hej Aleks</Text>
         <TouchableOpacity style={styles.bell}  onPress={() => navigation.navigate('Notifications')}>
@@ -25,7 +25,18 @@ export const Home = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <Input/>
-      <Text style={styles.titleForYou}>Dla Ciebie</Text>
+      <Text style={styles.titleSmall}>Nowości</Text>
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.horizontalList}>
+        <ProductCard name="Szafa RTV" price="3000 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="Komoda" price="2900 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="Krzesło" price="1000 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="Komoda" price="900 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="TV Rubin" price="30000 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="Sofa" price="300 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="Fotel" price="1000 PLN" style={{marginRight: 16}}/>
+        <ProductCard name="Barek" price="9000 PLN" style={{marginRight: 16}}/>
+      </ScrollView>
+      <Text style={styles.titleSmall}>Dla Ciebie</Text>
       <View style={styles.forYou}>
         <ProductCard name="Szafa RTV" price="3000 PLN"/>
         <ProductCard name="Komoda" price="2900 PLN"/>
@@ -63,12 +74,12 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins",
     fontWeight: "600",
   },
-  titleForYou: {
+  titleSmall: {
     fontSize: 22,
     lineHeight: 32,
     fontFamily: "Poppins",
     fontWeight: "600",
-
+    marginTop: 40
   },
   forYou:{
     flex: 1,
@@ -76,5 +87,5 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "flex-start"
-  }
+  },
 });

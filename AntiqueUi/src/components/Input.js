@@ -27,7 +27,7 @@ export const Input = ({ navigation }) => {
           fontWeight: "400",
           color:'#969BAB',
           marginTop: 32,
-          marginBottom: 40,
+          //marginBottom: 40,
           width: metrics.screenWidth - 48,
         }}
         placeholder="Search"
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     position: "relative",
     marginLeft: "auto",
     marginRight: 16,
-    marginBottom: 4,
+    marginBottom: -32,
    // marginRight: metrics.screenWidth
   }
 });

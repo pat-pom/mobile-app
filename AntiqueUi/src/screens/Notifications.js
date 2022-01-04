@@ -13,7 +13,7 @@ const metrics = {
 export const Notifications = ({ navigation }) => {
   return (
     <SafeAreaView>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.notificationWrapperUnread}>
               <Image style={styles.image}/>
               <View style={styles.messageWrapper}>
