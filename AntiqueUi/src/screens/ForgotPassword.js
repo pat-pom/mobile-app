@@ -8,6 +8,13 @@ import {
   Image,
   TextInput
 } from "react-native";
+import { Dimensions } from 'react-native';
+const {width, height} = Dimensions.get('window');
+
+const metrics = {
+  screenWidth: width < height ? width : height,
+  screenHeight: width < height ? height : width,
+}
 
 // import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
@@ -118,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   btn: {
-    width: "80%",
+    width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
     borderRadius: 3,
@@ -126,7 +133,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   btn1: {
-    width: "80%",
+    width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
     borderRadius: 5,
