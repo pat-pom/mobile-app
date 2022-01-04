@@ -14,62 +14,62 @@ export const Notifications = ({ navigation }) => {
   return (
     <SafeAreaView>
         <ScrollView>
-      <View style={styles.notificationWrapperUnread}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperUnread}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperUnread}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperUnread}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperRead}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperRead}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperRead}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperRead}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperRead}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperRead}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperRead}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperRead}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperRead}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperRead}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
-      <View style={styles.notificationWrapperRead}>
-          <Image style={styles.image}/>
-          <View style={styles.messageWrapper}>
-          <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
-          <Text style={styles.subMessage}>2 minutes ago</Text>
+          <View style={styles.notificationWrapperRead}>
+              <Image style={styles.image}/>
+              <View style={styles.messageWrapper}>
+              <Text style={styles.message}>Twój przdmiot został dodany {"\n"}do ulubionych.</Text>
+              <Text style={styles.subMessage}>2 minutes ago</Text>
+              </View>
           </View>
-      </View>
       </ScrollView>
     </SafeAreaView>
   )

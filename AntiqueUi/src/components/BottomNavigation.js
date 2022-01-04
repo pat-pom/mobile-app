@@ -13,7 +13,6 @@ import { Register } from '../screens/Register';
 import { Camera } from 'react-feather';
 import { StyleSheet } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-
 const Tab = createBottomTabNavigator();
 
 export function BottomNavigation() {
@@ -57,8 +56,8 @@ export function BottomNavigation() {
     })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Notifications" component={Notifications} options={{headerShown: true, tabBarShowLabel: false}}/>
-      <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false}}/>
+      {/* <Tab.Screen name="Notifications" component={Notifications} options={{headerShown: true, tabBarShowLabel: false, title: "Powiadomienia"}}/> */}
+      {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
@@ -66,7 +65,7 @@ export function BottomNavigation() {
       <Tab.Screen name="Register" component={Register} /> */}
       <Tab.Screen name="AddProduct" component={AddProduct}  style={styles.callToAction}  />
       <Tab.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3 }}/>
-      <Tab.Screen name="Profile" component={Profile} options={{headerShown: true}}  />
+      <Tab.Screen name="Profile" component={Profile} options={{headerShown: true, title: "Mój Profil"}}  />
     </Tab.Navigator>
   );
 }
