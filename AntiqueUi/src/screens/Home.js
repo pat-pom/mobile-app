@@ -27,14 +27,14 @@ export const Home = ({ navigation }) => {
       <Input/>
       <Text style={styles.titleForYou}>Dla Ciebie</Text>
       <View style={styles.forYou}>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
+        <ProductCard name="Szafa RTV" price="3000 PLN"/>
+        <ProductCard name="Komoda" price="2900 PLN"/>
+        <ProductCard name="Krzesło" price="1000 PLN"/>
+        <ProductCard name="Komoda" price="900 PLN"/>
+        <ProductCard name="TV Rubin" price="30000 PLN"/>
+        <ProductCard name="Sofa" price="300 PLN"/>
+        <ProductCard name="Fotel" price="1000 PLN"/>
+        <ProductCard name="Barek" price="9000 PLN"/>
       </View>
 
       </ScrollView>

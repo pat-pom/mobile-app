@@ -9,18 +9,18 @@ const metrics = {
 };
 
 
-export const ProductCard = ({ navigation }) => {
+export const ProductCard = ( props ) => {
   
   return (
       <View style={styles.container}>
           <View style={styles.image}>
           </View>
           <View style={styles.header}>
-              <Text style={styles.price}>3000 PLN</Text>
+              <Text style={styles.price}>{props.price}</Text>
               <Feather name="heart" size={20} style={styles.heart}/>
           </View>
           <View style={styles.content}>
-              <Text style={styles.title}>Szafa RTV</Text>
+              <Text style={styles.title}>{props.name}</Text>
           </View>
       </View>
   )
