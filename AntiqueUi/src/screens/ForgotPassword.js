@@ -11,31 +11,22 @@ import {
 } from "react-native";
 import { Dimensions } from 'react-native';
 const {width, height} = Dimensions.get('window');
-
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
 }
 
-// import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-
 export const ForgotPassword = () => {
   return (
     <SafeAreaView>
-
-
-      <View style={styles.middle}>
-        {/* <TextInput style={styles.input} placeholder="E-mail address" /> */}
-        <Text style={styles.pwdinfo}>Nie pamiętasz swojego hasła? Podaj nam swój adres e-mail, abyśmy mogli jak najszybciej je przywrócić</Text>
-        <TextInput style={styles.input} placeholder="E-mail address" />
-        {/* <TouchableOpacity onPress={() => {}}> */}
-          <Text style={{ marginLeft: "-5%", marginTop: 5 }}>
+      <View style={styles.container}>
+        <Text style={styles.message}>Nie pamiętasz swojego hasła? Podaj nam swój adres e-mail, abyśmy mogli jak najszybciej je przywrócić.</Text>
+          <TextInput placeholder="E-mail address" style={styles.textInput}/>
+          <Text style={styles.subMessage}>
             Wyślemy link resetujący hasło na Twój e-mail
           </Text>
-        {/* </TouchableOpacity> */}
-
-        <TouchableOpacity style={styles.btn1} onPress={() => {}}>
-          <Text style={styles.napis1}>Zaloguj się</Text>
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <Text style={styles.textInsideButton}>Zaloguj się</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -43,63 +34,58 @@ export const ForgotPassword = () => {
 }
 
 const styles = StyleSheet.create({
-//   top: {
-//     alignItems: "center",
-//     height: 100
-//   },
-  middle: {
-    height: 300,
-    alignItems: "center"
-  },
-  bottom: {
-    height: 250,
-    alignItems: "center"
-  },
-  btn: {
-    width: metrics.screenWidth - 48,
-    height: 50,
-    marginTop: 30,
-    borderRadius: 3,
-    backgroundColor: "#D9DBE1",
-    padding: 10
-  },
-  btn1: {
-    width: metrics.screenWidth - 48,
-    height: 50,
-    marginTop: 30,
-    borderRadius: 5,
-    backgroundColor: "#18191F",
-    borderStyle: "solid",
-    borderWidth: 2,
-    padding: 8
-  },
-  napis: {
-    fontSize: 20,
-    textAlign: "center",
-    padding: "auto"
-  },
-  napis1: {
-    fontSize: 20,
-    color: "white",
-    textAlign: "center"
-  },
-  input: {
-    width: "80%",
-    height: 50,
-    marginTop: 30,
-    borderRadius: 3,
-    padding: 10,
-    borderStyle: "solid",
-    borderWidth: 2
-  },
-  pwdinfo: {
-    width: "80%",
-    height: 50,
-    marginLeft: "-5%",
-    marginTop: 30,
-    borderRadius: 3,
-    padding: 10,
-  }
+container: {
+  height: metrics.screenHeight,
+  marginLeft: 24,
+  marginRight: 24,
+},
+message: {
+  fontSize: 14,
+  lineHeight: 24,
+  color: "#18191F",
+  marginTop: 24,
+  fontFamily: "Poppins",
+  fontWeight: "400",
+},
+subMessage: {
+fontSize: 12,
+lineHeight: 24,
+fontWeight: "500",
+color: "#474A57",
+marginLeft: 16,
+marginTop: 8,
+},
+textInput: {
+  height: 52,
+  borderColor: '#969BAB',
+  borderWidth: 1,
+  borderRadius: 4,
+  paddingLeft: 16,
+  fontSize: 14,
+  //lineHeight: 28,
+  fontWeight: "400",
+  color:'#969BAB',
+  marginTop: 32,
+  width: metrics.screenWidth - 48,
+},
+button: {
+  height: 52,
+  borderRadius: 4,
+
+  fontWeight: "400",
+  backgroundColor: "#18191F",
+  marginTop: 24,
+  width: metrics.screenWidth - 48,
+  alignItems: "center",
+  justifyContent: "center",
+},
+textInsideButton: {
+  fontSize: 16,
+  lineHeight: 24,
+  fontWeight: "500",
+  color: "#fff",
+  fontFamily: "Poppins"
+}
 });
 
 export default ForgotPassword;

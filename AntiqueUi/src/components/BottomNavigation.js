@@ -25,7 +25,8 @@ export function BottomNavigation() {
         fontSize: 18,
         lineHeight: 28,
         color: "#18191F",
-        fontWeight: "500"
+        fontWeight: "500",
+        fontFamily: "Poppins"
       },
       headerLeft: () => navigation.canGoBack() && <Feather name="arrow-left" size={24} onPress={() => navigation.goBack()} style={{marginLeft: 24}} />,
       headerShadowVisible: false,
