@@ -8,6 +8,7 @@ import { Search } from '../screens/Search';
 import { Chat } from '../screens/Chat';
 import { Join } from '../screens/Join';
 import { Login } from '../screens/Login';
+import { ForgotPassword } from '../screens/ForgotPassword';
 import { Register } from '../screens/Register';
 import { Camera } from 'react-feather';
 import { StyleSheet } from 'react-native';
@@ -56,6 +57,7 @@ export function BottomNavigation() {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Notifications" component={Notifications} options={{headerShown: true, tabBarShowLabel: false}}/>
+      <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false}}/>
       <Tab.Screen name="Search" component={Search} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />

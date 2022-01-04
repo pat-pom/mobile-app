@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   Text,
   Image,
-  TextInput
+  TextInput,
+  SafeAreaView
 } from "react-native";
 import { Dimensions } from 'react-native';
 const {width, height} = Dimensions.get('window');
@@ -20,31 +21,8 @@ const metrics = {
 
 export const ForgotPassword = () => {
   return (
-    <View>
-      <View style={styles.top}>
-        
-      <View>
-          <Button style={{
-          marginLeft: 40,
-          height: 50
-          }}>
-        </Button>
-        <Text style={{
-          marginTop: 48,
-          fontSize: 20
-        }}>Odzyskiwanie hasła
-        </Text>
-        </View>
-        {/* <Image
-          source={require("./icon.png")}
-          style={{
-            width: 80,
-            height: 115,
-            top: 30
-          }}
-        /> */}
-        
-      </View>
+    <SafeAreaView>
+
 
       <View style={styles.middle}>
         {/* <TextInput style={styles.input} placeholder="E-mail address" /> */}
@@ -60,62 +38,15 @@ export const ForgotPassword = () => {
           <Text style={styles.napis1}>Zaloguj się</Text>
         </TouchableOpacity>
       </View>
-
-      {/* <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <View
-          style={{
-            flex: 1,
-            height: 1,
-            backgroundColor: "#D9DBE1",
-            marginLeft: 10
-          }}
-        />
-        <View>
-          <Text style={{ width: "100%", textAlign: "center", padding: 10 }}>
-            Lub
-          </Text>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            height: 1,
-            backgroundColor: "#D9DBE1",
-            marginRight: 10
-          }}
-        />
-      </View>
-
-      <View style={styles.bottom}>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Google</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Facebook</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Apple</Text>
-        </TouchableOpacity>
-      </View>
-
-      <Text
-        style={{
-          width: "80%",
-          textAlign: "center",
-          marginLeft: 40,
-          fontSize: 12
-        }}
-      >
-        Logując się akceptujesz Regulamin Antique Sp. z.o.o.
-      </Text> */}
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  top: {
-    alignItems: "center",
-    height: 100
-  },
+//   top: {
+//     alignItems: "center",
+//     height: 100
+//   },
   middle: {
     height: 300,
     alignItems: "center"
