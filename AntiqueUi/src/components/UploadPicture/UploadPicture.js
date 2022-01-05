@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { TextInput, TouchableOpacity, Image, Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
+import { TextInput, TouchableOpacity, Image, Text, FlatList, StyleSheet, SafeAreaView, View, ScrollViewComponent } from "react-native";
 import { ActionSheet } from 'react-native-cross-actionsheet';
 import ImagePicker from 'react-native-image-crop-picker';
-
+import SelectDropdown from 'react-native-select-dropdown'
 import { THUMBNAIL_SIZE, THUMBNAIL_SPACEING } from './consts';
 import AddPhotoPlaceholder from "../../assets/images/AddPhotoPlaceholder.png";
 import { Dimensions } from 'react-native';
+import { Feather } from 'react-feather';
 const {width, height} = Dimensions.get('window');
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
 }
-
-export const UploadPicture = ({ images, setImages, maxImages }) => {
+const categories = ["Sofy", "Szafki", "RTV", "Meblościanki"]
+export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon }) => {
   const openUploadActionSheet = () =>
     ActionSheet.showActionSheetWithOptions(
       {
@@ -60,6 +61,7 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
 
   return (
     <SafeAreaView>
+    
       <TouchableOpacity style={styles.imageContainer} onPress={openUploadActionSheet}>
         <Image style={styles.image} source={AddPhotoPlaceholder} />
       </TouchableOpacity>
@@ -100,14 +102,15 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
         }}
         placeholder="np. Sofa"
       />
-      <Text style={styles.inputTitle}>Kategoria</Text>
+            <Text style={styles.inputTitle}>Opis</Text>
       <TextInput
         style={{
-          height: 52,
+          height: 148,
           borderColor: '#969BAB',
           borderWidth: 1,
           borderRadius: 4,
           paddingLeft: 16,
+          paddingBottom: "auto",
           fontSize: 14,
           //lineHeight: 28,
           fontWeight: "400",
@@ -115,8 +118,74 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
           //marginBottom: 40,
           width: metrics.screenWidth - 48,
         }}
-        placeholder="Kategoria"
+        placeholder="Opis"
       />
+      <Text style={styles.placeholder}>
+          0/500
+      </Text>
+      <Text style={styles.inputTitle}>Kategoria</Text>
+  
+      <SelectDropdown
+              // renderDropdownIcon={(isOpened) => {
+              //   return (
+              //     <Feather
+              //       name={isOpened ? "chevron-up" : "chevron-down"}
+              //       color={"#444"}
+              //       size={18}
+              //     />
+              //   );
+              // }}
+      defaultButtonText="Wybierz kategorię"
+      dropdownOverlayColor="rgba(0,0,0,0)"
+      dropdownIconPosition="right"
+      dropdownStyle={{
+        borderColor: '#969BAB',
+        borderWidth: 1,
+        backgroundColor: "#fff",
+        borderRadius: 4,
+        marginTop: 8,
+      }}
+      rowStyle={{
+        borderColor: '#969BAB',
+        padding: 16,
+      }}
+      rowTextStyle={{
+        fontSize: 14,
+        textAlign: "center",
+        fontWeight: "400",
+        color:'#000',
+        fontFamily:"Poppins"
+      }}
+      buttonStyle={{
+        height: 52,
+        borderColor: '#969BAB',
+        borderWidth: 1,
+        borderRadius: 4,
+        width: metrics.screenWidth - 48,
+        backgroundColor: "#fff"
+      }}
+        buttonTextStyle={{
+                fontSize: 14,
+                textAlign: "left",
+                fontWeight: "400",
+                color:'#969BAB',
+                fontFamily:"Poppins"
+              }}
+      data={categories}
+      onSelect={(selectedItem, index) => {
+
+      }}
+      buttonTextAfterSelection={(selectedItem, index) => {
+        // text represented after item is selected
+        // if data array is an array of objects then return selectedItem.property to render after item is selected
+        return selectedItem
+      }}
+      rowTextForSelection={(item, index) => {
+        // text represented for each item in dropdown
+        // if data array is an array of objects then return item.property to represent item in dropdown
+        return item
+      }}
+    />
       <Text style={styles.inputTitle}>Cena</Text>
       <TextInput
         style={{
@@ -169,7 +238,6 @@ export const UploadPicture = ({ images, setImages, maxImages }) => {
         }}
         placeholder="Cena"
       />
-
     </SafeAreaView>
   )
 }
@@ -206,6 +274,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   inputTitle: {
+    marginTop: 16,
     fontSize: 16,
     lineHeight: 24,
     fontWeight: "400",

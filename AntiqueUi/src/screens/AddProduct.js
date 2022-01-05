@@ -27,7 +27,7 @@ export const AddProduct = ({ navigation }) => {
   }
 
   return (
-    <ScrollView style={styles.scrollView}>
+    <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
       <UploadPicture images={images} setImages={setImages} maxImages={15} />
       <Pressable onPress={handleSubmit} style={styles.submit}>
         <Text style={styles.text}>Dodaj</Text>
