@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { Alert, Button, Platform, ScrollView, StyleSheet } from 'react-native';
+import { Text, Alert, Button, Platform, ScrollView, StyleSheet, Pressable } from 'react-native';
 
 import { UploadPicture } from '../components/UploadPicture/UploadPicture';
-
+import { Dimensions } from 'react-native';
+const {width, height} = Dimensions.get('window');
+const metrics = {
+  screenWidth: width < height ? width : height,
+  screenHeight: width < height ? height : width,
+}
 export const AddProduct = ({ navigation }) => {
   const [images, setImages] = useState([]);
 
@@ -24,7 +29,9 @@ export const AddProduct = ({ navigation }) => {
   return (
     <ScrollView style={styles.scrollView}>
       <UploadPicture images={images} setImages={setImages} maxImages={15} />
-      <Button title="Submit" onPress={handleSubmit} />
+      <Pressable onPress={handleSubmit} style={styles.submit}>
+        <Text style={styles.text}>Dodaj</Text>
+      </Pressable>
     </ScrollView >
   )
 }
@@ -33,4 +40,21 @@ const styles = StyleSheet.create({
   scrollView: {
     margin: 20,
   },
+  submit: {
+    height: 52,
+    borderRadius: 4,
+    fontWeight: "400",
+    backgroundColor: "#18191F",
+    marginTop: 24,
+    width: metrics.screenWidth - 48,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: "500",
+    color: "#fff",
+    fontFamily: "Poppins"
+  }
 })

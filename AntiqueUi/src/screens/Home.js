@@ -60,7 +60,7 @@ export const Home = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} />
+      <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: true,  title: "Powiadomienia" }} />
     </Stack.Navigator>
   )
 }
