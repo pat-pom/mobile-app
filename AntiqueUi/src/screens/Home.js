@@ -6,50 +6,62 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Input from '../components/Input';
 import { ProductCard } from '../components/ProductCard';
+import { Notifications } from './Notifications';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
 }
 
-export const Home = ({ navigation }) => {
+const Stack = createNativeStackNavigator();
+
+const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Hej Aleks</Text>
-        <TouchableOpacity style={styles.bell}  onPress={() => navigation.navigate('Notifications')}>
-          <Feather name="bell" size={24}/>
-        </TouchableOpacity>
-      </View>
-      <Input/>
-      <Text style={styles.titleSmall}>Nowości</Text>
-      <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.horizontalList}>
-        <ProductCard name="Szafa RTV" price="3000 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="Komoda" price="2900 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="Krzesło" price="1000 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="Komoda" price="900 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="TV Rubin" price="30000 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="Sofa" price="300 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="Fotel" price="1000 PLN" style={{marginRight: 16}}/>
-        <ProductCard name="Barek" price="9000 PLN" style={{marginRight: 16}}/>
-      </ScrollView>
-      <Text style={styles.titleSmall}>Dla Ciebie</Text>
-      <View style={styles.forYou}>
-        <ProductCard name="Szafa RTV" price="3000 PLN"/>
-        <ProductCard name="Komoda" price="2900 PLN"/>
-        <ProductCard name="Krzesło" price="1000 PLN"/>
-        <ProductCard name="Komoda" price="900 PLN"/>
-        <ProductCard name="TV Rubin" price="30000 PLN"/>
-        <ProductCard name="Sofa" price="300 PLN"/>
-        <ProductCard name="Fotel" price="1000 PLN"/>
-        <ProductCard name="Barek" price="9000 PLN"/>
-      </View>
+        <View style={styles.header}>
+          <Text style={styles.title}>Hej Aleks</Text>
+          <TouchableOpacity style={styles.bell} onPress={() => navigation.navigate('Notifications')}>
+            <Feather name="bell" size={24} />
+          </TouchableOpacity>
+        </View>
+        <Input />
+        <Text style={styles.titleSmall}>Nowości</Text>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.horizontalList}>
+          <ProductCard name="Szafa RTV" price="3000 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="Komoda" price="2900 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="Krzesło" price="1000 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="Komoda" price="900 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="TV Rubin" price="30000 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="Sofa" price="300 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="Fotel" price="1000 PLN" style={{ marginRight: 16 }} />
+          <ProductCard name="Barek" price="9000 PLN" style={{ marginRight: 16 }} />
+        </ScrollView>
+        <Text style={styles.titleSmall}>Dla Ciebie</Text>
+        <View style={styles.forYou}>
+          <ProductCard name="Szafa RTV" price="3000 PLN" />
+          <ProductCard name="Komoda" price="2900 PLN" />
+          <ProductCard name="Krzesło" price="1000 PLN" />
+          <ProductCard name="Komoda" price="900 PLN" />
+          <ProductCard name="TV Rubin" price="30000 PLN" />
+          <ProductCard name="Sofa" price="300 PLN" />
+          <ProductCard name="Fotel" price="1000 PLN" />
+          <ProductCard name="Barek" price="9000 PLN" />
+        </View>
 
       </ScrollView>
     </SafeAreaView>
+  )
+}
+
+export const Home = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} />
+    </Stack.Navigator>
   )
 }
 
@@ -68,7 +80,7 @@ const styles = StyleSheet.create({
   bell: {
     padding: 12,
   },
-  title:{
+  title: {
     fontSize: 36,
     lineHeight: 48,
     fontFamily: "Poppins",
@@ -81,7 +93,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginTop: 40
   },
-  forYou:{
+  forYou: {
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
