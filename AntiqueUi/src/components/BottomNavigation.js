@@ -13,6 +13,7 @@ import { Register } from '../screens/Register';
 import { Camera } from 'react-feather';
 import { StyleSheet } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
+import {ProductList} from '../screens/ProductList';
 const Tab = createBottomTabNavigator();
 
 export function BottomNavigation() {
@@ -58,7 +59,7 @@ export function BottomNavigation() {
       <Tab.Screen name="Home" component={Home} />
       {/* <Tab.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} /> */}
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="ProductList" component={ProductList} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />

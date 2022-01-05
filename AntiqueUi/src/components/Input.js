@@ -11,11 +11,15 @@ const metrics = {
 };
 
 
+
+
+
 export const Input = ({ navigation }) => {
-  
+
   return (
       <View style={styles.inputWrapper}>
       <TextInput
+       
         style={{
           height: 52,
           borderColor: '#969BAB',
