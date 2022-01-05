@@ -10,10 +10,6 @@ const metrics = {
   screenHeight: width < height ? height : width,
 };
 
-
-
-
-
 export const Filters = ({ navigation }) => {
 
   return (
@@ -50,7 +46,6 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginRight: 24,
   },
-  
   filterIcon:{
     marginRight: 8,
   },
@@ -65,8 +60,8 @@ const styles = StyleSheet.create({
       borderRadius: 4,
       borderWidth: 1,
       borderColor: "#D9DBE1",
-      paddingBottom: 4,
-      paddingTop: 4,
+      paddingBottom: 6,
+      paddingTop: 6,
       paddingLeft: 8,
       paddingRight: 8,
       marginRight: 8,

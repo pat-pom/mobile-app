@@ -9,6 +9,7 @@ import { Chat } from '../screens/Chat';
 import { Join } from '../screens/Join';
 import { Login } from '../screens/Login';
 import { ForgotPassword } from '../screens/ForgotPassword';
+import { Checkout } from '../screens/Checkout';
 import { Register } from '../screens/Register';
 import { Camera } from 'react-feather';
 import { StyleSheet } from 'react-native';
@@ -59,7 +60,7 @@ export function BottomNavigation() {
       <Tab.Screen name="Home" component={Home} />
       {/* <Tab.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} /> */}
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
-      <Tab.Screen name="ProductList" component={ProductList} />
+      <Tab.Screen name="Checkout" component={Checkout} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />

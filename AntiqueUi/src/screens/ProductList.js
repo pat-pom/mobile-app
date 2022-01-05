@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-native';
+import { Image, StyleSheet, Text, View, Button, TextInput, SafeAreaView, ScrollView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 import Feather from 'react-native-vector-icons/Feather';
 import Input from '../components/Input';
@@ -16,6 +16,7 @@ const metrics = {
 export const ProductList = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false}>
       <Input/>
       <Filters/>
       <View style={styles.forYou}>
@@ -27,7 +28,8 @@ export const ProductList = ({ navigation }) => {
           <ProductCard name="Sofa" price="300 PLN" />
           <ProductCard name="Fotel" price="1000 PLN" />
           <ProductCard name="Barek" price="9000 PLN" />
-        </View>
+          </View>
+          </ScrollView>
     </SafeAreaView>
     
   )
