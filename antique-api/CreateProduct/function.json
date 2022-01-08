@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["post"],
+      "route": "create-product/"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "productRecord",
+      "databaseName": "antiquecontainer",
+      "collectionName": "products",
+      "createIfNotExists": false,
+      "connectionStringSetting": "antiqueapidb_DOCUMENTDB",
+      "partitionKey": "/userId"
+    }
+  ],
+  "scriptFile": "../dist/CreateProduct/index.js"
+}
