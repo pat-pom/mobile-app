@@ -21,12 +21,12 @@ export const Join = () => {
       </View>
 
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.btn1} onPress={() => {}}>
-          <Text style={styles.napis1}>Chcę dołączyć</Text>
+        <TouchableOpacity style={styles.joinButton} onPress={() => {}}>
+          <Text style={styles.joinText}>Chcę dołączyć</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Posiadam konto</Text>
+        <TouchableOpacity style={styles.accountButton} onPress={() => {}}>
+          <Text style={styles.accountText}>Posiadam konto</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -46,10 +46,8 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     lineHeight: 24
   },
-  btn1: {
+  joinButton: {
     width: metrics.screenWidth - 48,
-    // height: 50,
-    // marginTop: 30,
     borderRadius: 4,
     backgroundColor: "#18191F",
     paddingTop: 12,
@@ -57,10 +55,8 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     paddingRight: 16
   },
-  btn: {
+  accountButton: {
     width: metrics.screenWidth - 48,
-    // height: 50,
-    // marginTop: 30,
     borderRadius: 4,
     backgroundColor: "white",
     paddingTop: 12,
@@ -68,14 +64,14 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     paddingRight: 16
   },
-  napis: {
+  accountText: {
     fontSize: 16,
     color: "#18191F",
     lineHeight: 28,
     fontWeight: "500",
     textAlign: "center"
   },
-  napis1: {
+  joinText: {
     fontSize: 16,
     color: "white",
     lineHeight: 28,
