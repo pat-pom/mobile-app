@@ -14,6 +14,7 @@ export const AddProduct = ({ navigation }) => {
   const [images, setImages] = useState([]);
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
+      images: [],
       title: '',
       description: '',
     }
@@ -21,18 +22,26 @@ export const AddProduct = ({ navigation }) => {
 
   const onSubmit = data => {
     const formData = new FormData();
+    const imagesData = [];
 
     images.forEach(image => {
+      const imageUrl = `https://antiqueapistorage.blob.core.windows.net/uploads/${image.filename}`
       formData.append(image.filename, {
         uri: Platform.OS === 'ios' ? image.sourceURL.replace('file://', '') : image.sourceURL,
         type: "image/jpg",
         name: image.filename,
       });
+      imagesData.push(imageUrl);
     });
+
+    data.images = imagesData;
+
     axios.post("https://antique-dev-api.azurewebsites.net/api/create-product", data).then(res => console.log(res));
+    axios.post("https://antique-dev-api.azurewebsites.net/api/upload-file", formData).then(res => console.log(res))
 
     reset();
     setImages([]);
+    imagesData = [];
   }
 
   return (
