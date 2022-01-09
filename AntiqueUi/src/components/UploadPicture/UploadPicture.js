@@ -85,7 +85,7 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
           </TouchableOpacity>
         )}
       />
-      <Text style={styles.inputTitle}>Tytuł</Text>
+      {/* <Text style={styles.inputTitle}>Tytuł</Text>
       <TextInput
         style={{
           height: 52,
@@ -237,7 +237,7 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
           width: metrics.screenWidth - 48,
         }}
         placeholder="Cena"
-      />
+      /> */}
     </SafeAreaView>
   )
 }
