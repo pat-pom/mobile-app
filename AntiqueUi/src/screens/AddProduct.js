@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Text, Alert, Button, Platform, ScrollView, StyleSheet, Pressable } from 'react-native';
+import { TextInput, Text, ScrollView, StyleSheet, Pressable } from 'react-native';
+import { useForm, Controller } from "react-hook-form";
+import axios from "../config/axios";
 
 import { UploadPicture } from '../components/UploadPicture/UploadPicture';
 import { Dimensions } from 'react-native';
@@ -10,8 +12,14 @@ const metrics = {
 }
 export const AddProduct = ({ navigation }) => {
   const [images, setImages] = useState([]);
+  const { control, handleSubmit, reset } = useForm({
+    defaultValues: {
+      title: '',
+      description: '',
+    }
+  });
 
-  const handleSubmit = () => {
+  const onSubmit = data => {
     const formData = new FormData();
 
     images.forEach(image => {
@@ -21,17 +29,68 @@ export const AddProduct = ({ navigation }) => {
         name: image.filename,
       });
     });
+    axios.post("https://antique-dev-api.azurewebsites.net/api/create-product", data).then(res => console.log(res));
 
-    // TODO: write request whose sending data to backend
-
+    reset();
+    setImages([]);
   }
 
   return (
     <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
       <UploadPicture images={images} setImages={setImages} maxImages={15} />
-      <Pressable onPress={handleSubmit} style={styles.submit}>
-        <Text style={styles.text}>Dodaj</Text>
-      </Pressable>
+      <Controller 
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value }}) => (
+          <>
+            <Text style={styles.inputTitle}>Tytuł</Text>
+            <TextInput
+              style={styles.input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholder="np. Sofa"
+            />
+          </>
+        )}
+        name="title"
+      />
+      <Controller 
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value }}) => (
+          <>
+            <Text style={styles.inputTitle}>Opis</Text>
+            <TextInput
+              style={{ 
+                height: 148,
+                borderColor: '#969BAB',
+                borderWidth: 1,
+                borderRadius: 4,
+                paddingLeft: 16,
+                fontSize: 14,
+                fontWeight: "400",
+                color:'#969BAB',
+                width: metrics.screenWidth - 48,
+               }}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholder="Opis"
+              multiline={true}
+            />
+          </>
+        )}
+        name="description"
+      />
+
+    <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
+      <Text style={styles.text}>Dodaj</Text>
+    </Pressable>
     </ScrollView >
   )
 }
@@ -56,5 +115,26 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#fff",
     fontFamily: "Poppins"
+  },
+  input: {
+    height: 52,
+    borderColor: '#969BAB',
+    borderWidth: 1,
+    borderRadius: 4,
+    paddingLeft: 16,
+    fontSize: 14,
+    //lineHeight: 28,
+    fontWeight: "400",
+    color:'#969BAB',
+    //marginBottom: 40,
+    width: metrics.screenWidth - 48,
+  },
+  inputTitle: {
+    marginTop: 16,
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: "400",
+    fontFamily: "Poppins",
+    marginBottom: 8
   }
 })
