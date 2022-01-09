@@ -1,5 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import { BlobServiceClient, BlobHTTPHeaders } from "@azure/storage-blob";
+import { BlobServiceClient } from "@azure/storage-blob";
 import { PICTURE_CONTAINER_NAME, SUPORTED_FILE_TYPES } from "../Common/Consts";
 import { getUploadedFiles } from "../Common/Utils";
 
