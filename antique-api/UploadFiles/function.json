@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["post"],
+      "route": "upload-file"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "upload",
+      "path": "uploads/{rand-guid}",
+      "connection": "antiqueapistorage_STORAGE"
+    }
+  ],
+  "scriptFile": "../dist/UploadFiles/index.js"
+}
