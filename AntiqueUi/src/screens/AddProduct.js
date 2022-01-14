@@ -18,6 +18,7 @@ const metrics = {
   screenHeight: width < height ? height : width,
 };
 const categories = ["Sofy", "Szafki", "RTV", "Meblościanki"];
+const state = ["nowe", "uzywane"];
 export const AddProduct = ({ navigation }) => {
   const [images, setImages] = useState([]);
   const { control, handleSubmit, reset, setValue } = useForm({
@@ -26,6 +27,8 @@ export const AddProduct = ({ navigation }) => {
       title: "",
       description: "",
       category: "",
+      price: "",
+      state: "",
     },
   });
 
@@ -179,6 +182,86 @@ export const AddProduct = ({ navigation }) => {
           </>
         )}
         name="category"
+      />
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <>
+            <Text style={styles.inputTitle}>Cena</Text>
+            <TextInput
+              style={styles.input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholder="Cena"
+              keyboardType="numeric"
+            />
+          </>
+        )}
+        name="price"
+      />
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <>
+            <Text style={styles.inputTitle}>Kategoria</Text>
+            <SelectDropdown
+              defaultButtonText="Wybierz kategorię"
+              dropdownOverlayColor="rgba(0,0,0,0)"
+              dropdownIconPosition="right"
+              dropdownStyle={{
+                borderColor: "#969BAB",
+                borderWidth: 1,
+                backgroundColor: "#fff",
+                borderRadius: 4,
+                marginTop: 8,
+              }}
+              rowStyle={{
+                borderColor: "#969BAB",
+                padding: 16,
+              }}
+              rowTextStyle={{
+                fontSize: 14,
+                textAlign: "center",
+                fontWeight: "400",
+                color: "#000",
+                fontFamily: "Poppins",
+              }}
+              buttonStyle={{
+                height: 52,
+                borderColor: "#969BAB",
+                borderWidth: 1,
+                borderRadius: 4,
+                width: metrics.screenWidth - 48,
+                backgroundColor: "#fff",
+              }}
+              buttonTextStyle={{
+                fontSize: 14,
+                textAlign: "left",
+                fontWeight: "400",
+                color: "#969BAB",
+                fontFamily: "Poppins",
+              }}
+              data={state}
+              onSelect={(selectedItem, index) =>
+                setValue("state", selectedItem)
+              }
+              buttonTextAfterSelection={(selectedItem, index) => {
+                return value;
+              }}
+              rowTextForSelection={(item, index) => {
+                return item;
+              }}
+            />
+          </>
+        )}
+        name="state"
       />
 
       <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
