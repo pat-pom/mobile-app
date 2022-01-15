@@ -26,7 +26,7 @@ export const ForgotPassword = () => {
             Wyślemy link resetujący hasło na Twój e-mail
           </Text>
         <TouchableOpacity style={styles.button} onPress={() => {}}>
-          <Text style={styles.textInsideButton}>Zaloguj się</Text>
+          <Text style={styles.textInsideButton}>Zresetuj hasło</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -62,7 +62,6 @@ textInput: {
   borderRadius: 4,
   paddingLeft: 16,
   fontSize: 14,
-  //lineHeight: 28,
   fontWeight: "400",
   color:'#969BAB',
   marginTop: 32,
@@ -71,7 +70,6 @@ textInput: {
 button: {
   height: 52,
   borderRadius: 4,
-
   fontWeight: "400",
   backgroundColor: "#18191F",
   marginTop: 24,

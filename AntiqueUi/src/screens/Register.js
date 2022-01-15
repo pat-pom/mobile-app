@@ -32,14 +32,14 @@ export const Register = () => {
       </View>
 
       <View style={styles.middle}>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Google</Text>
+        <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Text style={styles.continueLabel}>Kontynuuj z Google</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Facebook</Text>
+        <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Text style={styles.continueLabel}>Kontynuuj z Facebook</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Apple</Text>
+        <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Text style={styles.continueLabel}>Kontynuuj z Apple</Text>
         </TouchableOpacity>
       </View>
 
@@ -76,8 +76,8 @@ export const Register = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn1} onPress={() => {}}>
-          <Text style={styles.napis1}>Załóż konto</Text>
+        <TouchableOpacity style={styles.joinButton} onPress={() => {}}>
+          <Text style={styles.joinLabel}>Załóż konto</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     height: 410,
     alignItems: "center"
   },
-  btn: {
+  continueButton: {
     width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D9DBE1",
     padding: 10
   },
-  btn1: {
+  joinButton: {
     width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
@@ -115,12 +115,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8
   },
-  napis: {
+  continueLabel: {
     fontSize: 20,
     textAlign: "center",
     padding: "auto"
   },
-  napis1: {
+  joinLabel: {
     fontSize: 20,
     color: "white",
     textAlign: "center"

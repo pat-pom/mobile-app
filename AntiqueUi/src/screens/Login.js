@@ -40,8 +40,8 @@ export const Login = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn1} onPress={() => {}}>
-          <Text style={styles.napis1}>Zaloguj się</Text>
+        <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
+          <Text style={styles.loginLabel}>Zaloguj się</Text>
         </TouchableOpacity>
       </View>
 
@@ -70,14 +70,14 @@ export const Login = () => {
       </View>
 
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Google</Text>
+        <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Text style={styles.continueLabel}>Kontynuuj z Google</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Facebook</Text>
+        <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Text style={styles.continueLabel}>Kontynuuj z Facebook</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => {}}>
-          <Text style={styles.napis}>Kontynuuj z Apple</Text>
+        <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Text style={styles.continueLabel}>Kontynuuj z Apple</Text>
         </TouchableOpacity>
       </View>
 
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     height: 250,
     alignItems: "center"
   },
-  btn: {
+  continueButton: {
     width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D9DBE1",
     padding: 10
   },
-  btn1: {
+  loginButton: {
     width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
@@ -126,12 +126,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 8
   },
-  napis: {
+  continueLabel: {
     fontSize: 20,
     textAlign: "center",
     padding: "auto"
   },
-  napis1: {
+  loginLabel: {
     fontSize: 20,
     color: "white",
     textAlign: "center"
