@@ -280,7 +280,7 @@ export const AddProduct = ({ navigation }) => {
                 console.log(data, details);
               }}
               query={{
-                key: "AIzaSyA57ZOPr8J7zpm1C-xau3oKS0ia9ej9pJ4",
+                key: "AIzaSyA57ZOPr8J7zpmlC-xau3oKS0ia9ej9pJ4",
                 language: "en",
               }}
             />
