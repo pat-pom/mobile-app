@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
-import { TextInput, TouchableOpacity, Image, Text, FlatList, StyleSheet, SafeAreaView, View, ScrollViewComponent } from "react-native";
-import { ActionSheet } from 'react-native-cross-actionsheet';
-import ImagePicker from 'react-native-image-crop-picker';
-import SelectDropdown from 'react-native-select-dropdown'
-import { THUMBNAIL_SIZE, THUMBNAIL_SPACEING } from './consts';
+import React, { useState } from "react";
+import {
+  TextInput,
+  TouchableOpacity,
+  Image,
+  Text,
+  FlatList,
+  StyleSheet,
+  SafeAreaView,
+  View,
+  ScrollViewComponent,
+} from "react-native";
+import { ActionSheet } from "react-native-cross-actionsheet";
+import ImagePicker from "react-native-image-crop-picker";
+import SelectDropdown from "react-native-select-dropdown";
+import { THUMBNAIL_SIZE, THUMBNAIL_SPACEING } from "./consts";
 import AddPhotoPlaceholder from "../../assets/images/AddPhotoPlaceholder.png";
-import { Dimensions } from 'react-native';
-import { Feather } from 'react-feather';
-const {width, height} = Dimensions.get('window');
+import { Dimensions } from "react-native";
+import { Feather } from "react-feather";
+const { width, height } = Dimensions.get("window");
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
-}
-const categories = ["Sofy", "Szafki", "RTV", "Meblościanki"]
-export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon }) => {
+};
+const categories = ["Sofy", "Szafki", "RTV", "Meblościanki"];
+export const UploadPicture = ({
+  images,
+  setImages,
+  maxImages,
+  renderDropdownIcon,
+}) => {
   const openUploadActionSheet = () =>
     ActionSheet.showActionSheetWithOptions(
       {
@@ -21,15 +36,15 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
         message: "Choose your item pictures",
         options: ["Cancel", "Choose from library", "Take a picture"],
         cancelButtonIndex: 0,
-        userInterfaceStyle: 'light'
+        userInterfaceStyle: "light",
       },
-      buttonIndex => {
+      (buttonIndex) => {
         if (buttonIndex === 1) {
           ImagePicker.openPicker({
             multiple: true,
             maxFiles: maxImages,
-          }).then(images => {
-            setImages(prevState => [...prevState, ...images]);
+          }).then((images) => {
+            setImages((prevState) => [...prevState, ...images]);
           });
         } else if (buttonIndex === 2) {
           ImagePicker.openCamera({
@@ -38,8 +53,8 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
             cropping: true,
             includeBase64: true,
             maxFiles: maxImages,
-          }).then(image => {
-            setImages(prevState => [...prevState, ...image]);
+          }).then((image) => {
+            setImages((prevState) => [...prevState, ...image]);
           });
         }
       }
@@ -50,9 +65,9 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
       {
         options: ["Cancel", "Delete"],
         cancelButtonIndex: 0,
-        userInterfaceStyle: 'light'
+        userInterfaceStyle: "light",
       },
-      buttonIndex => {
+      (buttonIndex) => {
         if (buttonIndex === 1) {
           setImages(images.filter((image, index) => index !== pictureIndex));
         }
@@ -61,27 +76,27 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
 
   return (
     <SafeAreaView>
-    
-      <TouchableOpacity style={styles.imageContainer} onPress={openUploadActionSheet}>
+      <TouchableOpacity
+        style={styles.imageContainer}
+        onPress={openUploadActionSheet}
+      >
         <Image style={styles.image} source={AddPhotoPlaceholder} />
       </TouchableOpacity>
-      <Text style={styles.placeholder}>
-          *maksymalnie 15 zdjęć
-      </Text>
+      <Text style={styles.placeholder}>*maksymalnie 15 zdjęć</Text>
       <FlatList
         horizontal={true}
         data={images}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
-          paddingTop: 10
+          paddingTop: 10,
         }}
-        keyExtractor={item => item.filename + Math.random()}
+        keyExtractor={(item) => item.filename + Math.random()}
         renderItem={({ item, index }) => (
-          <TouchableOpacity activeOpacity={0.9} onPress={() => openDeleteActionSheet(index)}>
-            <Image
-              style={styles.thumbnails}
-              source={{ uri: item.path }}
-            />
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => openDeleteActionSheet(index)}
+          >
+            <Image style={styles.thumbnails} source={{ uri: item.path }} />
           </TouchableOpacity>
         )}
       />
@@ -239,8 +254,8 @@ export const UploadPicture = ({ images, setImages, maxImages, renderDropdownIcon
         placeholder="Cena"
       /> */}
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   image: {
@@ -248,23 +263,23 @@ const styles = StyleSheet.create({
     width: 48,
   },
   placeholder: {
-    color: '#969BAB',
+    color: "#969BAB",
     fontFamily: "Poppins",
     marginTop: 8,
     fontSize: 11,
     lineHeight: 16,
-    alignSelf: 'flex-end'
+    alignSelf: "flex-end",
   },
   imageContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     borderWidth: 1,
     marginTop: 24,
     width: metrics.screenWidth - 40,
     height: 176,
     borderRadius: 4,
-    borderColor: '#969BAB',
+    borderColor: "#969BAB",
   },
   thumbnails: {
     width: THUMBNAIL_SIZE,
@@ -279,6 +294,6 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontWeight: "400",
     fontFamily: "Poppins",
-    marginBottom: 8
-  }
+    marginBottom: 8,
+  },
 });

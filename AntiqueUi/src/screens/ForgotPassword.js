@@ -7,31 +7,34 @@ import {
   Text,
   Image,
   TextInput,
-  SafeAreaView
+  SafeAreaView,
 } from "react-native";
-import { Dimensions } from 'react-native';
-const {width, height} = Dimensions.get('window');
+import { Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
-}
+};
 
 export const ForgotPassword = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text style={styles.message}>Nie pamiętasz swojego hasła? Podaj nam swój adres e-mail, abyśmy mogli jak najszybciej je przywrócić.</Text>
-          <TextInput placeholder="E-mail address" style={styles.textInput}/>
-          <Text style={styles.subMessage}>
-            Wyślemy link resetujący hasło na Twój e-mail
-          </Text>
+        <Text style={styles.message}>
+          Nie pamiętasz swojego hasła? Podaj nam swój adres e-mail, abyśmy mogli
+          jak najszybciej je przywrócić.
+        </Text>
+        <TextInput placeholder="E-mail address" style={styles.textInput} />
+        <Text style={styles.subMessage}>
+          Wyślemy link resetujący hasło na Twój e-mail
+        </Text>
         <TouchableOpacity style={styles.button} onPress={() => {}}>
           <Text style={styles.textInsideButton}>Zresetuj hasło</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
 container: {
