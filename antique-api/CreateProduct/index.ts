@@ -17,6 +17,9 @@ const httpTrigger: AzureFunction = async function (
       title: newProduct.title,
       description: newProduct.description,
       images: newProduct.images,
+      category: newProduct.category,
+      price: newProduct.price,
+      state: newProduct.state,
     } as ProductModel;
 
     const productRecordO = {
