@@ -14,7 +14,7 @@ export const Splash = () => {
     <SafeAreaView>
       <View style={styles.header}>
         <Image
-          source={require("../assets/images/icon.png")}
+          source={require("../assets/images/iconwhite.png")}
           style={styles.icon}
         />
       </View>
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
   header: {
     height: metrics.screenHeight - 173,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#21A179",
   }
 });
 

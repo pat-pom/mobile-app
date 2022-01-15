@@ -12,6 +12,15 @@ export const Join = () => {
   return (
     <SafeAreaView>
       <View style={styles.top}>
+        <Image
+          source={require("../assets/images/wallpaper.png")}
+          style={{
+            alignSelf: 'center',
+            height: 580,
+            width: 375,
+          }}
+        />
+
         <TouchableOpacity
           style={styles.skip}
           onPress={() => {}}
@@ -49,7 +58,8 @@ const styles = StyleSheet.create({
   joinButton: {
     width: metrics.screenWidth - 48,
     borderRadius: 4,
-    backgroundColor: "#18191F",
+    // backgroundColor: "#18191F",
+    backgroundColor: "#21A179",
     paddingTop: 12,
     paddingBottom: 12,
     paddingLeft: 16,
