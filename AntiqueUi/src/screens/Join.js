@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     marginRight: 24,
     marginTop: 48,
     textDecorationLine: "underline",
-    lineHeight: 24
+    lineHeight: 24,
+    color: "#white"
   },
   joinButton: {
     width: metrics.screenWidth - 48,
