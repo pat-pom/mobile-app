@@ -30,7 +30,7 @@ export const AddProduct = ({ navigation }) => {
       category: "",
       price: "",
       state: "",
-      location: "",
+      loclization: "",
     },
   });
 
@@ -55,22 +55,22 @@ export const AddProduct = ({ navigation }) => {
 
     data.images = imagesData;
 
-    // axios
-    //   .post(
-    //     "https://antique-dev-api.azurewebsites.net/api/create-product",
-    //     data
-    //   )
-    //   .then((res) => console.log(res));
-    // axios
-    //   .post(
-    //     "https://antique-dev-api.azurewebsites.net/api/upload-file",
-    //     formData
-    //   )
-    //   .then((res) => console.log(res));
+    axios
+      .post(
+        "https://antique-dev-api.azurewebsites.net/api/create-product",
+        data
+      )
+      .then((res) => console.log(res));
+    axios
+      .post(
+        "https://antique-dev-api.azurewebsites.net/api/upload-file",
+        formData
+      )
+      .then((res) => console.log(res));
 
-    // reset();
-    // setImages([]);
-    // imagesData = [];
+    reset();
+    setImages([]);
+    imagesData = [];
   };
 
   return (
@@ -273,20 +273,16 @@ export const AddProduct = ({ navigation }) => {
         render={({ field: { onChange, onBlur, value } }) => (
           <>
             <Text style={styles.inputTitle}>Lokalizacja</Text>
-            <GooglePlacesAutocomplete
-              placeholder="Warszawa"
-              onPress={(data, details = null) => {
-                // 'details' is provided when fetchDetails = true
-                console.log(data, details);
-              }}
-              query={{
-                key: "AIzaSyA57ZOPr8J7zpmlC-xau3oKS0ia9ej9pJ4",
-                language: "en",
-              }}
+            <TextInput
+              style={styles.input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholder="Lokalizacja"
             />
           </>
         )}
-        name="location"
+        name="loclization"
       />
 
       <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
