@@ -11,9 +11,6 @@ const metrics = {
 };
 
 
-
-
-
 export const Input = ({ navigation }) => {
 
   return (
@@ -27,11 +24,9 @@ export const Input = ({ navigation }) => {
           borderRadius: 4,
           paddingLeft: 16,
           fontSize: 14,
-          //lineHeight: 28,
           fontWeight: "400",
           color:'#969BAB',
           marginTop: 32,
-          //marginBottom: 40,
           width: metrics.screenWidth - 48,
         }}
         placeholder="Search"
@@ -71,7 +66,6 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: 16,
     marginBottom: -32,
-   // marginRight: metrics.screenWidth
   }
 });
 

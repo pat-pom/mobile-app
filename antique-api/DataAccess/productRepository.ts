@@ -27,6 +27,10 @@ export async function getAllProducts(): Promise<ProductRecord[]> {
       userId: item.userId,
       title: item.title,
       description: item.description,
+      images: item.images,
+      category: item.category,
+      price: item.price,
+      state: item.state,
     } as ProductRecord;
   });
 }

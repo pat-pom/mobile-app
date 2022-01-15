@@ -324,7 +324,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingLeft: 16,
     fontSize: 14,
-    //lineHeight: 28,
     fontWeight: "400",
     color: "#969BAB",
     //marginBottom: 40,

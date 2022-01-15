@@ -29,7 +29,7 @@ export const ForgotPassword = () => {
           Wyślemy link resetujący hasło na Twój e-mail
         </Text>
         <TouchableOpacity style={styles.button} onPress={() => {}}>
-          <Text style={styles.textInsideButton}>Zaloguj się</Text>
+          <Text style={styles.textInsideButton}>Zresetuj hasło</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

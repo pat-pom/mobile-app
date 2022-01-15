@@ -30,9 +30,6 @@ const styles = StyleSheet.create({
   statusBar: {
     height: Constants.statusBarHeight,
   },
-  container: {
-
-  },
   header: {
     fontSize: 18,
     fontWeight: "500",
