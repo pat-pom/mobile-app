@@ -25,6 +25,7 @@ const httpTrigger: AzureFunction = async function (
       category: product.category,
       price: product.price,
       state: product.state,
+      localization: product.localization,
     } as ProductRecord;
 
     try {

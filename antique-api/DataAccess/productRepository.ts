@@ -31,6 +31,7 @@ export async function getAllProducts(): Promise<ProductRecord[]> {
       category: item.category,
       price: item.price,
       state: item.state,
+      localization: item.localization,
     } as ProductRecord;
   });
 }

@@ -7,4 +7,5 @@ export interface ProductRecord {
   category: string;
   price: number;
   state: string;
+  localization: string;
 }

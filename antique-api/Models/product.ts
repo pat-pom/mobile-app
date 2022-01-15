@@ -6,4 +6,5 @@ export interface ProductModel {
   category: string;
   price: number;
   state: string;
+  localization: string;
 }

@@ -5,4 +5,5 @@ export interface CreateProductModel {
   category: string;
   price: number;
   state: string;
+  localization: string;
 }
