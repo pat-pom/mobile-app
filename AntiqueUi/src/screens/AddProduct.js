@@ -9,6 +9,7 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import axios from "../config/axios";
 import SelectDropdown from "react-native-select-dropdown";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import { UploadPicture } from "../components/UploadPicture/UploadPicture";
 import { Dimensions } from "react-native";
@@ -29,6 +30,7 @@ export const AddProduct = ({ navigation }) => {
       category: "",
       price: "",
       state: "",
+      location: "",
     },
   });
 
@@ -262,6 +264,29 @@ export const AddProduct = ({ navigation }) => {
           </>
         )}
         name="state"
+      />
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <>
+            <Text style={styles.inputTitle}>Lokalizacja</Text>
+            <GooglePlacesAutocomplete
+              placeholder="Warszawa"
+              onPress={(data, details = null) => {
+                // 'details' is provided when fetchDetails = true
+                console.log(data, details);
+              }}
+              query={{
+                key: "AIzaSyA57ZOPr8J7zpm1C-xau3oKS0ia9ej9pJ4",
+                language: "en",
+              }}
+            />
+          </>
+        )}
+        name="location"
       />
 
       <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
