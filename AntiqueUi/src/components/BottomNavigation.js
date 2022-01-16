@@ -62,6 +62,7 @@ export function BottomNavigation() {
       {/* <Tab.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} /> */}
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Chat" component={Chat} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />*/}
