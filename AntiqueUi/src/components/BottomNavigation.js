@@ -58,7 +58,7 @@ export function BottomNavigation() {
         tabBarInactiveTintColor: '#474A57',
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Login" component={Login} />
       {/* <Tab.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} /> */}
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
