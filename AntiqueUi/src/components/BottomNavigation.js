@@ -6,6 +6,7 @@ import { Splash } from '../screens/Splash';
 import { Notifications } from '../screens/Notifications';
 import { Search } from '../screens/Search';
 import { Chat } from '../screens/Chat';
+import { Messages } from '../screens/Messages';
 import { Join } from '../screens/Join';
 import { Login } from '../screens/Login';
 import { ForgotPassword } from '../screens/ForgotPassword';
@@ -38,7 +39,7 @@ export function BottomNavigation() {
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home';
-          } else if (route.name === 'Chat') {
+          } else if (route.name === 'Messages') {
             iconName = focused ? 'message-circle' : 'message-circle';
           }
           else if (route.name === 'AddProduct') {
@@ -63,10 +64,10 @@ export function BottomNavigation() {
       <Tab.Screen name="Search" component={Search} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
-      <Tab.Screen name="Login" component={Login} />
-      <Tab.Screen name="Register" component={Register} /> */}
+      <Tab.Screen name="Login" component={Login} />*/}
+
       <Tab.Screen name="AddProduct" component={AddProduct} style={styles.callToAction} options={{ headerShown: true, title: "Dodaj produkt" }} />
-      <Tab.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3 }} />
+      <Tab.Screen name="Messages" component={Messages} options={{ headerShown: true, title: "Wiadomości", tabBarBadge: 3 }}/>
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: true, title: "Mój Profil" }} />
     </Tab.Navigator>
   );
