@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ymx2NwL54zKgtCZEDvrMZPmNxbnB2vuM7Z/S8/PprQLmU2FS4wgar5m5C1y5hMtcgKmHCLFszrZ5UB/BBKSIFA==",
+  "success": true,
+  "projectFilePath": "D:\\Studia\\mobile-app\\AntiqueApi\\AntiqueApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lucza\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\lucza\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
