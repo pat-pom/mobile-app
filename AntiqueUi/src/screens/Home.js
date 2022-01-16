@@ -17,7 +17,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Input from "../components/Input";
 import { ProductCard } from "../components/ProductCard";
 import { Notifications } from "./Notifications";
-
+import { Messages } from "./Messages";
+import { Chat } from "./Chat";
 const { width, height } = Dimensions.get("window");
 
 const metrics = {
@@ -120,6 +121,25 @@ export const Home = () => {
     </Stack.Navigator>
   );
 };
+
+export const Mess = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+          name="Messages"
+          component={Messages}
+          options={{ headerShown: false }}
+      />
+      <Stack.Screen
+          name="Chat"
+          component={Chat}
+          options={{ headerShown: true, title: "Chat" }}
+    />
+    </Stack.Navigator>
+  );
+};
+
+
 
 const styles = StyleSheet.create({
   container: {

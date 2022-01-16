@@ -64,8 +64,8 @@ export function BottomNavigation() {
       <Tab.Screen name="Search" component={Search} />
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
-      <Tab.Screen name="Login" component={Login} />
-      <Tab.Screen name="Register" component={Register} /> */}
+      <Tab.Screen name="Login" component={Login} />*/}
+
       <Tab.Screen name="AddProduct" component={AddProduct} style={styles.callToAction} options={{ headerShown: true, title: "Dodaj produkt" }} />
       <Tab.Screen name="Messages" component={Messages} options={{ headerShown: true, title: "Wiadomości", tabBarBadge: 3 }}/>
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: true, title: "Mój Profil" }} />

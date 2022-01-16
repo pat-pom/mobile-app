@@ -1,12 +1,16 @@
 import React from "react";
-import { Button, StyleSheet, View, TouchableOpacity, Text, SafeAreaView , FlatList} from "react-native";
+import { Button, StyleSheet, View, TouchableOpacity, Text, SafeAreaView , FlatList, Image} from "react-native";
 import { Dimensions } from 'react-native';
+import { Chat } from "./Chat";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const {width, height} = Dimensions.get('window');
 
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
 }
+
+const Stack = createNativeStackNavigator();
 
 const msg = [
     {
@@ -51,30 +55,78 @@ const msg = [
     },
   ];
 
-export const Messages = ({navgiation}) => {
+export const Messages = ({navigation}) => {
     return (
-      <View style={styles.container}>
-          <FlatList
+      <View>
+          <FlatList 
           data={msg}
           keyExtractor={item=>item.id}
           renderItem={({item}) => (
-            <View>
-                <Text>{item.userName}</Text>
-            </View>
+            <TouchableOpacity style={styles.notificationWrapperUnread} onPress={() => navigation.navigate("Chat")}>
+                <Image style={styles.image}/>
+                <View style={styles.messageWrapper}>
+                    <Text style={styles.message}>{item.userName} wysłała wiadomość {'\n'} w sprawie Twojego przedmiotu</Text>
+                    <Text style={styles.subMessage}>{item.messageTime}</Text>
+                </View>
+            </TouchableOpacity>
           )}/>
 
           
       </View>
     );
   }
+
+
   
   const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    }
-
+    //     flex: 1,
+    //     alignItems: "center",
+    //     justifyContent: "center"
+    // }
+    height: metrics.screenHeight,
+    marginLeft: 24,
+    marginRight: 24,
+  },
+  notificationWrapperUnread: {
+      flexDirection: "row",
+      backgroundColor: "#F4F5F7",
+      paddingTop: 8,
+      paddingBottom: 8,
+      paddingLeft: 24,
+      paddingRight: 24
+  },
+  notificationWrapperRead: {
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 24,
+    paddingRight: 24
+},
+  image:{
+      width: 80,
+      height: 80,
+      borderRadius: 4,
+      backgroundColor: "#D9DBE1"
+  },
+  messageWrapper: {
+    flexDirection: "column",
+    marginLeft: 8
+  },
+  message: {
+      fontSize: 16,
+      lineHeight: 24,
+      color: "#18191F",
+      fontWeight: "400",
+      
+  },
+  subMessage: {
+      marginTop: 8,
+      color: "#969BAB",
+      fontSize: 12,
+      lineHeight: 20,
+      textTransform: 'uppercase'
+  }
   });
   
-  export default Messages;
