@@ -1,5 +1,7 @@
 ﻿using AntiqueApi.Data;
 using AntiqueApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +9,7 @@ namespace AntiqueApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProductController : ControllerBase
     {
         private readonly ApiDbContext _context;
@@ -17,6 +20,7 @@ namespace AntiqueApi.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetProducts()
         {
             var products = await _context.Products.ToListAsync();
@@ -39,6 +43,7 @@ namespace AntiqueApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetProduct(Guid id)
         {
             var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
