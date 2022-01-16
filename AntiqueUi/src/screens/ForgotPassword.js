@@ -37,58 +37,57 @@ export const ForgotPassword = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    height: metrics.screenHeight,
-    marginLeft: 24,
-    marginRight: 24,
-  },
-  message: {
-    fontSize: 14,
-    lineHeight: 24,
-    color: "#18191F",
-    marginTop: 24,
-    fontFamily: "Poppins",
-    fontWeight: "400",
-  },
-  subMessage: {
-    fontSize: 12,
-    lineHeight: 24,
-    fontWeight: "500",
-    color: "#474A57",
-    marginLeft: 16,
-    marginTop: 8,
-  },
-  textInput: {
-    height: 52,
-    borderColor: "#969BAB",
-    borderWidth: 1,
-    borderRadius: 4,
-    paddingLeft: 16,
-    fontSize: 14,
-    //lineHeight: 28,
-    fontWeight: "400",
-    color: "#969BAB",
-    marginTop: 32,
-    width: metrics.screenWidth - 48,
-  },
-  button: {
-    height: 52,
-    borderRadius: 4,
-
-    fontWeight: "400",
-    backgroundColor: "#18191F",
-    marginTop: 24,
-    width: metrics.screenWidth - 48,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  textInsideButton: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: "500",
-    color: "#fff",
-    fontFamily: "Poppins",
-  },
+container: {
+  height: metrics.screenHeight,
+  marginLeft: 24,
+  marginRight: 24,
+},
+message: {
+  fontSize: 14,
+  lineHeight: 24,
+  color: "#18191F",
+  marginTop: 24,
+  fontFamily: "Poppins",
+  fontWeight: "400",
+},
+subMessage: {
+fontSize: 12,
+lineHeight: 24,
+fontWeight: "500",
+color: "#474A57",
+marginLeft: 16,
+marginTop: 8,
+},
+textInput: {
+  height: 52,
+  borderColor: '#969BAB',
+  borderWidth: 1,
+  borderRadius: 4,
+  paddingLeft: 16,
+  fontSize: 14,
+  fontWeight: "400",
+  color:'#969BAB',
+  marginTop: 32,
+  width: metrics.screenWidth - 48,
+},
+button: {
+  height: 52,
+  borderRadius: 4,
+  fontWeight: "400",
+  // backgroundColor: "#18191F",
+  backgroundColor: "#21A179",
+  marginTop: 24,
+  width: metrics.screenWidth - 48,
+  alignItems: "center",
+  justifyContent: "center",
+},
+textInsideButton: {
+  fontSize: 16,
+  lineHeight: 24,
+  fontWeight: "500",
+  color: "#fff",
+  fontFamily: "Poppins"
+}
 });
 
 export default ForgotPassword;
