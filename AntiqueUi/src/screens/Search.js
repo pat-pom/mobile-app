@@ -3,7 +3,10 @@ import { BottomNavigation } from '../components/BottomNavigation';
 import Feather from 'react-native-vector-icons/Feather';
 import Input from '../components/Input';
 import { Dimensions } from 'react-native';
-
+import  {
+  SvgUri
+} from 'react-native-svg';
+import SearchImage from '../assets/images/search.svg';
 const {width, height} = Dimensions.get('window');
 
 const metrics = {
@@ -16,8 +19,9 @@ export const Search = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Input/>
-      <View style={styles.imageTextWrapper}>
-      <Image source={require('../assets/images/img.png')}/>
+      <View style={styles.imageTextWrapper}>r
+ 
+      
       <Text style={styles.text}>Zacznij eksploracje i znajdź coś dla swojego wnętrza</Text>
       </View>
     </SafeAreaView>

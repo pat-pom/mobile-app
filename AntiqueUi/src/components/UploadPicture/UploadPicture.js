@@ -22,7 +22,7 @@ const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
 };
-const categories = ["Sofy", "Szafki", "RTV", "Meblościanki"];
+//const categories = ["Sofy", "Szafki", "RTV", "Meblościanki"];
 export const UploadPicture = ({
   images,
   setImages,

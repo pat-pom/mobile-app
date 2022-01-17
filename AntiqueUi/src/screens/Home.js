@@ -98,18 +98,21 @@ export const Home = () => {
   );
 };
 
-export const Mess = () => {
+export const Mess = ({navigation}) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
           name="Messages"
           component={Messages}
-          options={{ headerShown: false }}
+       
       />
       <Stack.Screen
           name="Chat"
           component={Chat}
-          options={{ headerShown: true, title: "Chat" }}
+          options={({route}) => ({
+            title: route.params.userName,
+            headerShown: true
+          })}
     />
     </Stack.Navigator>
   );

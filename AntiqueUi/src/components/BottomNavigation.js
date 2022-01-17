@@ -58,11 +58,11 @@ export function BottomNavigation() {
         tabBarInactiveTintColor: '#969BAB',
       })}
     >
-      <Tab.Screen name="Login" component={Login} />
+      <Tab.Screen name="Home" component={Home} />
       {/* <Tab.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} /> */}
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
-      <Tab.Screen name="Chat" component={Chat} />
+      <Tab.Screen name="Chat" component={Chat} options={{ headerShown: true, title: "UserName" }}/>
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />*/}

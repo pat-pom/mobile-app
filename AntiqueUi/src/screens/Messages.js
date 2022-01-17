@@ -62,7 +62,7 @@ export const Messages = ({navigation}) => {
           data={msg}
           keyExtractor={item=>item.id}
           renderItem={({item}) => (
-            <TouchableOpacity style={styles.notificationWrapperUnread} onPress={() => navigation.navigate("Chat")}>
+            <TouchableOpacity style={styles.notificationWrapperUnread} onPress={() => navigation.navigate("Chat", {userName: item.userName})}>
                 <Image style={styles.image}/>
                 <View style={styles.messageWrapper}>
                     <Text style={styles.message}>{item.userName} wysłała wiadomość {'\n'} w sprawie Twojego przedmiotu</Text>

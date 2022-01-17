@@ -12,6 +12,7 @@ import SelectDropdown from "react-native-select-dropdown";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import { UploadPicture } from "../components/UploadPicture/UploadPicture";
+
 import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 const metrics = {
@@ -110,6 +111,7 @@ export const AddProduct = ({ navigation }) => {
                 borderWidth: 1,
                 borderRadius: 4,
                 paddingLeft: 16,
+                paddingTop:16,
                 fontSize: 14,
                 fontWeight: "400",
                 color: "#969BAB",
@@ -323,6 +325,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "400",
     color: "#969BAB",
+    fontFamily: "poppins",
     //marginBottom: 40,
     width: metrics.screenWidth - 48,
   },
