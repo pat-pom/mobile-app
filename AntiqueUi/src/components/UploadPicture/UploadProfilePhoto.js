@@ -55,19 +55,18 @@ const openDeleteActionSheet = (pictureIndex) =>
     }
   );
   return (
-            <View style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={openUploadActionSheet}>
                 {
-                    image  && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+                    image  && <Image source={require('../../assets/images/img.png')} style={{ width: 112, height: 112 }} />
                 }
-                    
-                    <View style={styles.uploadBtnContainer}>
-                        <TouchableOpacity onPress={openUploadActionSheet} style={styles.uploadBtn} >
+                    <View style={styles.uploadBtnContainer} >
+                        <View  style={styles.uploadBtn} >
                             <Feather name="camera" size={16} color="black" style={{marginTop: 6}}/>
-                        </TouchableOpacity>
+                        </View>
                     </View>
               
 
-            </View>
+            </TouchableOpacity>
    
   );
 }
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
         elevation:2,
         height:112,
         width:112, 
-        backgroundColor:'#efefef',
+        // backgroundColor:'#efefef',
         position:'relative',
         borderRadius:999,
         overflow:'hidden',
