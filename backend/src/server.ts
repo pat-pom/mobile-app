@@ -1,12 +1,11 @@
-import * as express from "express";
-import * as bodyParser from "body-parser";
+import { App } from "./app";
 
-const app = express();
+import { ProductController } from "./modules/products/products.controller";
 
-app.use(bodyParser.json());
+const port = process.env.port || 8080;
 
-app.get("/", (request, response) => {
-  response.send("Hello World");
-});
+const controllers = [new ProductController()];
 
-app.listen(5001);
+const app = new App(controllers, port);
+
+app.listen();
