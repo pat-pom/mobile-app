@@ -1,11 +1,13 @@
-import { App } from "./app";
+import "dotenv/config";
 
+import { App } from "./app";
+import { validateEnv } from "./utils/validateEnv";
 import { ProductController } from "./modules/products/products.controller";
 
-const port = process.env.port || 8080;
+validateEnv();
 
 const controllers = [new ProductController()];
 
-const app = new App(controllers, port);
+const app = new App(controllers);
 
 app.listen();

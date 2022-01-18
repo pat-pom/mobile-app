@@ -1,16 +1,24 @@
 import * as express from "express";
+import * as mongoose from "mongoose";
 import { json } from "body-parser";
+
+import { Controller } from "./interfaces/controller.interface";
 
 export class App {
   public app: express.Application;
-  public port: number;
 
-  constructor(controllers, port) {
+  constructor(controllers: Controller[]) {
     this.app = express();
-    this.port = port;
 
+    this.connectToTheDatabase();
     this.initializeMiddleware();
     this.initializeControllers(controllers);
+  }
+
+  public listen() {
+    this.app.listen(process.env.PORT, () => {
+      console.log(`[INFO] App listening on the port ${process.env.PORT}.`);
+    });
   }
 
   private initializeMiddleware() {
@@ -23,9 +31,9 @@ export class App {
     });
   }
 
-  public listen() {
-    this.app.listen(this.port, () => {
-      console.log(`[INFO] App listening on the port ${this.port}`);
+  private connectToTheDatabase() {
+    mongoose.connect(process.env.CONNECTION_STRING, () => {
+      console.log("[INFO] Connected to MongoDB database.");
     });
   }
 }
