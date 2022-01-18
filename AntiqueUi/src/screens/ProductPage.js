@@ -11,40 +11,35 @@ const metrics = {
 export const ProductPage = () => {
   return (
     <SafeAreaView>
-      <SafeAreaView style={styles.top}>
+      <View style={styles.top}>
         <Image
           source={require("../assets/images/wallpaperarmchair.png")}
           style={{ height: 333, width: 375 }}
         />
-      </SafeAreaView>
+      </View>
 
       <View style={styles.bottom}>
-        {/* <SafeAreaView>
-          <SafeAreaView> */}
-            <Text style={styles.title}>Fotel Skórzany</Text>
-            <br />
-            <Text style={styles.subtitle}>ODNOWIONY</Text>
-            <br />
-          {/* </SafeAreaView>
-        </SafeAreaView> */}
-        <SafeAreaView style={{ flexDirection: "row", alignItems: "baseline" }}>
+        <Text style={styles.title}>Fotel Skórzany {'\n'}</Text>
+        <Text style={styles.subtitle}>ODNOWIONY {'\n'}</Text>
+        
+        <View style={{ flexDirection: "row", alignItems: "baseline" }}>
           <Text style={styles.price}>460 PLN</Text>
           <Text style={styles.delivery}> + dostawa</Text>
-        </SafeAreaView>
+        </View>
 
-        <SafeAreaView style={{ flexDirection: "row", alignItems: "center" }}>
-          <SafeAreaView style={styles.breakline} />
-        </SafeAreaView>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View style={styles.breakline} />
+        </View>
 
-        <SafeAreaView style={{ flexDirection: "row", alignItems: "center", marginTop: 20 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", marginTop: 20 }}>
           <Image
             source={require("../assets/images/profilepic.png")}
             style={styles.profilepic}
           />
           <Text style={styles.username}>janek 343</Text>
-        </SafeAreaView>
+        </View>
 
-        <SafeAreaView style={{ marginTop: 20 }}>
+        <View style={{ marginTop: 20 }}>
           <Text style={styles.descriptionLabel}>
             Opis przedmiotu:
             <br />
@@ -53,16 +48,16 @@ export const ProductPage = () => {
             Przedmiotem ogłoszenia jest piękny, odnowiony skórzany fotel.
             Została nabita nowa skóra.
           </Text>
-        </SafeAreaView>
+        </View>
         
-        <SafeAreaView style={styles.buttonsBox}>
+        <View style={styles.buttonsBox}>
           <TouchableOpacity style={styles.messageButton} onPress={() => {}}>
             <Text style={styles.messageLabel}>Wiadomość</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.buyButton} onPress={() => {}}>
             <Text style={styles.buyLabel}>Kup przedmiot</Text>
           </TouchableOpacity>
-        </SafeAreaView>
+        </View>
       </View>
     </SafeAreaView>
   );
