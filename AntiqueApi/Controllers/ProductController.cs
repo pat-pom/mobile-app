@@ -29,7 +29,6 @@ namespace AntiqueApi.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> AddProduct(ProductData productData)
         {
             if(ModelState.IsValid)
