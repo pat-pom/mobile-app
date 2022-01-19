@@ -1,7 +1,7 @@
 using AntiqueApi.Configuration;
 using AntiqueApi.Data;
+using AntiqueApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -41,7 +41,7 @@ builder.Services.AddAuthentication(options =>
     jwt.TokenValidationParameters = tokenValidationParams;
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApiDbContext>();
 
 builder.Services.AddControllers();

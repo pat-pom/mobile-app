@@ -23,12 +23,13 @@ namespace AntiqueApi.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetProducts()
         {
-            var products = await _context.Products.ToListAsync();
+            var products = await _context.Products.Include(x => x.User).ToListAsync();
 
             return Ok(products);
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> AddProduct(ProductData productData)
         {
             if(ModelState.IsValid)
@@ -46,7 +47,7 @@ namespace AntiqueApi.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetProduct(Guid id)
         {
-            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _context.Products.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
 
             if (product == null) { return NotFound(); }
 

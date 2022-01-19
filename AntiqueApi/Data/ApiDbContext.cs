@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AntiqueApi.Data
 {
-    public class ApiDbContext : IdentityDbContext
+    public class ApiDbContext : IdentityDbContext<ApplicationUser>
     {
         public virtual DbSet<ProductData>? Products { get; set; }
         public virtual DbSet<RefreshToken>? RefreshTokens { get; set; }

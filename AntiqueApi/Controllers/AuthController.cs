@@ -18,13 +18,13 @@ namespace AntiqueApi.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly JwtConfig _jwtConfig;
         private readonly TokenValidationParameters _tokenValidationParameters;
         private readonly ApiDbContext _apiDbContext;
 
         public AuthController(
-            UserManager<IdentityUser> userManager,
+            UserManager<ApplicationUser> userManager,
             IOptionsMonitor<JwtConfig> optionMonitor,
             TokenValidationParameters tokenValidationParameters,
             ApiDbContext apiDbContext)
@@ -55,7 +55,7 @@ namespace AntiqueApi.Controllers
                     });
                 }
 
-                var newUser = new IdentityUser() { Email = user.Email, UserName = user.UserName };
+                var newUser = new ApplicationUser() { Email = user.Email, UserName = user.UserName };
                 var isCreated = await _userManager.CreateAsync(newUser, user.Password);
 
                 if(isCreated.Succeeded)
@@ -216,7 +216,7 @@ namespace AntiqueApi.Controllers
                 .Select(x => x[random.Next(x.Length)]).ToArray());
         }
 
-        private async Task<AuthResult> VerifyAndGenerateToken(TokenRequestDto tokenRequestDto)
+        private async Task<AuthResult?> VerifyAndGenerateToken(TokenRequestDto tokenRequestDto)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
 

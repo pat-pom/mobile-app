@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AntiqueApi.Models
 {
@@ -15,6 +14,6 @@ namespace AntiqueApi.Models
         public DateTime ExpiryDate { get; set; }
 
         [ForeignKey(nameof(UserId))]
-        public IdentityUser User { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
