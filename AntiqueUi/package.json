@@ -9,6 +9,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.5.9",
     "@react-native-picker/picker": "^2.2.1",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
@@ -22,6 +23,7 @@
     "i": "^0.3.7",
     "npm": "^8.3.1",
     "react": "17.0.1",
+    "react-chat-elements": "^10.16.0",
     "react-dom": "17.0.1",
     "react-feather": "^2.0.9",
     "react-hook-form": "^7.22.5",
@@ -32,6 +34,7 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-select-dropdown": "^1.6.0",
+    "react-native-svg": "^12.1.1",
     "react-native-vector-icons": "^9.0.0",
     "react-native-web": "0.17.1"
   },

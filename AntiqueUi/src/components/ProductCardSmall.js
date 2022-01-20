@@ -1,5 +1,5 @@
 import { Keyboard, TouchableOpacity ,StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-native';
-import { BottomNavigation } from '../components/BottomNavigation';
+import { BottomNavigation } from './BottomNavigation';
 import { Dimensions } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 const {width, height} = Dimensions.get('window');
@@ -9,7 +9,7 @@ const metrics = {
 };
 
 
-export const ProductCard = ( props ) => {
+export const ProductCardSmall = ( props ) => {
   
   return (
       <View style={styles.container}>
@@ -29,12 +29,13 @@ export const ProductCard = ( props ) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
-    width: 152,
+    width: 144,
     marginTop: 16,
+    marginRight: 16
   },
   image: {
-    height: 152,
-    width: 152,
+    height: 144,
+    width: 144,
     backgroundColor: "#D9DBE1",
     borderRadius: 4,
   },
@@ -61,4 +62,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ProductCard
+export default ProductCardSmall

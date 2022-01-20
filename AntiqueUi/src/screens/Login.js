@@ -7,11 +7,13 @@ import {
   Text,
   Image,
   TextInput,
-  SafeAreaView
+  SafeAreaView,
+  Pressable,
 } from "react-native";
+import CheckBox from '@react-native-community/checkbox';
+import { Feather } from "react-feather";
 import { Dimensions } from 'react-native';
 const {width, height} = Dimensions.get('window');
-
 const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
@@ -26,125 +28,211 @@ export const Login = () => {
           style={{
             width: 80,
             height: 115,
-            top: 30
+            top: 30,
+            marginBottom: 16
           }}
         />
       </View>
 
-      <View style={styles.middle}>
-        <TextInput style={styles.input} placeholder="E-mail address" />
-        <TextInput style={styles.input} placeholder="Password" />
-        <TouchableOpacity onPress={() => {}}>
-          <Text style={{ marginLeft: "-60%", marginTop: 5 }}>
-            Nie pamiętasz hasła?
-          </Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
-          <Text style={styles.loginLabel}>Zaloguj się</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <View
-          style={{
-            flex: 1,
-            height: 1,
-            backgroundColor: "#D9DBE1",
-            marginLeft: 10
-          }}
-        />
-        <View>
-          <Text style={{ width: "100%", textAlign: "center", padding: 10 }}>
-            Lub
-          </Text>
+<View style={{ alignItems: "center"}}>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={{
+                height: 52,
+                borderColor: '#969BAB',
+                borderWidth: 1,
+                borderRadius: 4,
+                paddingLeft: 16,
+                fontSize: 14,
+                fontWeight: "400",
+                fontFamily: "Poppins",
+                color:'#969BAB',
+                marginTop: 32,
+                width: metrics.screenWidth - 48,
+              }}
+              placeholder="E-mail address"
+            />
+            {/* <Feather name="search" size={16} color="#969BAB" style={styles.inputIcon}/> */}
         </View>
+        <View style={styles.inputWrapper}>
+            <TextInput
+              style={{
+                height: 52,
+                borderColor: '#969BAB',
+                borderWidth: 1,
+                borderRadius: 4,
+                paddingLeft: 16,
+                fontSize: 14,
+                fontWeight: "400",
+                fontFamily: "Poppins",
+                color:'#969BAB',
+                marginTop: 16,
+                width: metrics.screenWidth - 48,
+              }}
+              placeholder="***********"
+            />
+            {/* <Feather name="search" size={16} color="#969BAB" style={styles.inputIcon}/> */}
+        </View>
+        </View>
+
+        <View style={{alignItems: "center"}}>
+          <TouchableOpacity>
+          
+
+{/* <CheckBox
+  disabled={false}
+/> */}
+            <Text style={{
+                              fontSize: 12,
+                              lineHeight: 24,
+                              fontWeight: "500",
+                              fontFamily: "Poppins",
+                              color:'#424D49',
+                              marginLeft: 24,
+                              marginTop: 8,
+            }}>
+              Nie pamiętasz hasła?
+            </Text>
+          </TouchableOpacity> 
+        </View>  
+
+      <View style={{alignItems: "center"}}>
+          <Pressable style={styles.submit}>
+            <Text style={styles.text}>Załóz konto</Text>
+          </Pressable> 
+      </View>
+       <View style={{ flexDirection: "row", alignItems: "center", justifyContent:"center" }}>
         <View
           style={{
-            flex: 1,
             height: 1,
-            backgroundColor: "#D9DBE1",
-            marginRight: 10
+            backgroundColor: "#E6EBEA",
+            width: metrics.screenWidth - 48,
+            zIndex: 0
           }}
-        />
-      </View>
-
-      <View style={styles.bottom}>
+        >
+          <Text style={{ zIndex: 1,textAlign: "center", backgroundColor: "white", fontSize: 12, lineHeight: 28, fontWeight:"400", fontFamily: "Poppins", color: "#60716A", marginLeft: "auto", marginRight: "auto"}}>
+            lub
+          </Text>
+          </View> 
+      </View> 
+      
+      <View style={styles.middle}>
         <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Image 
+            source={require("../assets/images/google.png")}
+            style={{
+              marginRight: 16,
+              marginLeft: "auto"
+            }}
+          />
           <Text style={styles.continueLabel}>Kontynuuj z Google</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Image 
+            source={require("../assets/images/facebook.png")}
+            style={{
+              marginRight: 16,
+              marginLeft: "auto"
+            }}
+          />
           <Text style={styles.continueLabel}>Kontynuuj z Facebook</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.continueButton} onPress={() => {}}>
+          <Image 
+            source={require("../assets/images/apple.png")}
+            style={{
+              marginRight: 16,
+              marginLeft: "auto"
+            }}
+          />
           <Text style={styles.continueLabel}>Kontynuuj z Apple</Text>
         </TouchableOpacity>
-      </View>
+      </View> 
 
-      <Text
-        style={{
-          width: "80%",
-          textAlign: "center",
-          marginLeft: 40,
-          fontSize: 12
-        }}
-      >
-        Logując się akceptujesz Regulamin Antique Sp. z.o.o.
-      </Text>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  top: {
-    alignItems: "center",
-    height: 150
-  },
-  middle: {
-    height: 300,
+  top:{
     alignItems: "center"
   },
+
+  submit: {
+    height: 52,
+    borderRadius: 4,
+    fontWeight: "400",
+    // backgroundColor: "#18191F",
+    backgroundColor: "#21A179",
+    marginTop: 24,
+    width: metrics.screenWidth - 48,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 24,
+    fontWeight: "500",
+    color: "#fff",
+    fontFamily: "Poppins",
+  },
+  middle: {
+    marginTop:32,
+    alignItems: "center",
+    marginBottom: 24,
+  },
   bottom: {
-    height: 250,
+    height: 410,
     alignItems: "center"
   },
   continueButton: {
+    marginTop: 16,
     width: metrics.screenWidth - 48,
-    height: 50,
-    marginTop: 30,
-    borderRadius: 3,
-    backgroundColor: "#D9DBE1",
-    padding: 10
+    borderRadius: 4,
+    borderColor: "#E6EBEA",
+    borderWidth: 1,
+    paddingRight: 16,
+    paddingLeft: 16,
+    paddingBottom: 14,
+    paddingTop: 14,
+    alignContent: "center",
+    flexDirection: "row",
+    fontFamily: "Poppins",
+    color: "#151E1B",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 24,
   },
-  loginButton: {
+  joinButton: {
     width: metrics.screenWidth - 48,
     height: 50,
     marginTop: 30,
     borderRadius: 5,
     // backgroundColor: "#18191F",
     backgroundColor: "#21A179",
-    borderStyle: "solid",
-    borderWidth: 2,
+
     padding: 8
   },
   continueLabel: {
     fontSize: 20,
     textAlign: "center",
-    padding: "auto"
+    marginRight: "auto"
   },
-  loginLabel: {
+  joinLabel: {
     fontSize: 20,
     color: "white",
     textAlign: "center"
   },
-  input: {
-    width: "80%",
-    height: 50,
-    marginTop: 30,
-    borderRadius: 3,
-    padding: 10,
-    borderStyle: "solid",
-    borderWidth: 2
+  inputWrapper:{
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  inputIcon:{
+    position: "relative",
+    marginLeft: "auto",
+    marginRight: 16,
+    marginBottom: -32,
   }
 });
 

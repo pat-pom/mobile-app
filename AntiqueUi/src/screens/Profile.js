@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { Dimensions } from 'react-native';
+import { UploadProfilePhoto } from "../components/UploadPicture/UploadProfilePhoto";
 
 const {width, height} = Dimensions.get('window');
 
@@ -14,7 +15,8 @@ export const Profile = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.profileWrapper}>
-        <Image style={styles.image}/>
+        {/* <Image style={styles.image}/> */}
+        <UploadProfilePhoto style={styles.image}/>
         <Text style={styles.name}>Jan Kowalski</Text>
       </View>
       <View style={styles.menuWrapper}>

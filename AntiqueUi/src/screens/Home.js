@@ -16,8 +16,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Input from "../components/Input";
 import { ProductCard } from "../components/ProductCard";
+import { ProductCardSmall } from "../components/ProductCardSmall";
 import { Notifications } from "./Notifications";
-
+import { Messages } from "./Messages";
+import { Chat } from "./Chat";
 const { width, height } = Dimensions.get("window");
 
 const metrics = {
@@ -45,44 +47,19 @@ const HomeScreen = ({ navigation }) => {
         <ScrollView
           showsHorizontalScrollIndicator={false}
           horizontal={true}
-          style={styles.horizontalList}
+        
         >
-          <ProductCard
+          <ProductCardSmall
             name="Szafa RTV"
             price="3000 PLN"
             style={{ marginRight: 16 }}
           />
-          <ProductCard
+          <ProductCardSmall
             name="Komoda"
             price="2900 PLN"
             style={{ marginRight: 16 }}
           />
-          <ProductCard
-            name="Krzesło"
-            price="1000 PLN"
-            style={{ marginRight: 16 }}
-          />
-          <ProductCard
-            name="Komoda"
-            price="900 PLN"
-            style={{ marginRight: 16 }}
-          />
-          <ProductCard
-            name="TV Rubin"
-            price="30000 PLN"
-            style={{ marginRight: 16 }}
-          />
-          <ProductCard
-            name="Sofa"
-            price="300 PLN"
-            style={{ marginRight: 16 }}
-          />
-          <ProductCard
-            name="Fotel"
-            price="1000 PLN"
-            style={{ marginRight: 16 }}
-          />
-          <ProductCard
+          <ProductCardSmall
             name="Barek"
             price="9000 PLN"
             style={{ marginRight: 16 }}
@@ -120,6 +97,28 @@ export const Home = () => {
     </Stack.Navigator>
   );
 };
+
+export const Mess = ({navigation}) => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+          name="Messages"
+          component={Messages}
+       
+      />
+      <Stack.Screen
+          name="Chat"
+          component={Chat}
+          options={({route}) => ({
+            title: route.params.userName,
+            headerShown: true
+          })}
+    />
+    </Stack.Navigator>
+  );
+};
+
+
 
 const styles = StyleSheet.create({
   container: {

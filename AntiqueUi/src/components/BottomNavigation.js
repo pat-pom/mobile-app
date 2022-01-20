@@ -54,7 +54,7 @@ export function BottomNavigation() {
 
           return <Feather name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#474A57',
+        tabBarActiveTintColor: '#21A179',
         tabBarInactiveTintColor: '#969BAB',
       })}
     >
@@ -62,10 +62,11 @@ export function BottomNavigation() {
       {/* <Tab.Screen name="Notifications" component={Notifications} options={{ headerShown: true, tabBarShowLabel: false, title: "Powiadomienia" }} /> */}
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Chat" component={Chat} options={{ headerShown: true, title: "UserName" }}/>
       {/* <Tab.Screen name="Splash" component={Splash} /> */}
       {/* <Tab.Screen name="Join" component={Join} />
-      <Tab.Screen name="Login" component={Login} />
-      <Tab.Screen name="Register" component={Register} /> */}
+      <Tab.Screen name="Login" component={Login} />*/}
+
       <Tab.Screen name="AddProduct" component={AddProduct} style={styles.callToAction} options={{ headerShown: true, title: "Dodaj produkt" }} />
       <Tab.Screen name="Messages" component={Messages} options={{ headerShown: true, title: "Wiadomości", tabBarBadge: 3 }}/>
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: true, title: "Mój Profil" }} />
