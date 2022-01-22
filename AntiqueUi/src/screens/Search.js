@@ -19,10 +19,8 @@ export const Search = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Input/>
-      <View style={styles.imageTextWrapper}>r
- 
-      
-      <Text style={styles.text}>Zacznij eksploracje i znajdź coś dla swojego wnętrza</Text>
+      <View style={styles.imageTextWrapper}>
+        <Text style={styles.text}>Zacznij eksploracje i znajdź coś dla swojego wnętrza</Text>
       </View>
     </SafeAreaView>
     

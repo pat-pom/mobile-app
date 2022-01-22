@@ -55,7 +55,7 @@ export function BottomNavigation() {
           return <Feather name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#21A179',
-        tabBarInactiveTintColor: '#969BAB',
+        tabBarInactiveTintColor: '#60716A',
       })}
     >
       <Tab.Screen name="Home" component={Home} />

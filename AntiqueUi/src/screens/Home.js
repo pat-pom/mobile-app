@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
     lineHeight: 48,
     fontFamily: "Poppins",
     fontWeight: "600",
+    color: "#151E1B"
   },
   titleSmall: {
     fontSize: 22,
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins",
     fontWeight: "600",
     marginTop: 40,
+    color: "#151E1B"
   },
   forYou: {
     flex: 1,
