@@ -287,9 +287,26 @@ export const AddProduct = ({ navigation }) => {
         name="loclization"
       />
 
-      <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
+      <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                height: 52,
+                borderRadius: 4,
+                fontWeight: "400",
+                marginTop: 24,
+                width: metrics.screenWidth - 48,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            ]}
+            >
+            <Text style={styles.text}>Dodaj</Text>
+          </Pressable>
+
+      {/* <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
         <Text style={styles.text}>Dodaj</Text>
-      </Pressable>
+      </Pressable> */}
+
     </ScrollView>
   );
 };

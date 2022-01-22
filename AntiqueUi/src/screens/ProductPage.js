@@ -54,9 +54,26 @@ export const ProductPage = () => {
           <TouchableOpacity style={styles.messageButton} onPress={() => {}}>
             <Text style={styles.messageLabel}>Wiadomość</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buyButton} onPress={() => {}}>
+
+
+          <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                width: 152,
+                height: 52,
+                padding: 6,
+                borderRadius: 4
+              },
+            ]}
+            >
             <Text style={styles.buyLabel}>Kup przedmiot</Text>
-          </TouchableOpacity>
+          </Pressable>
+
+          {/* <TouchableOpacity style={styles.buyButton} onPress={() => {}}>
+            <Text style={styles.buyLabel}>Kup przedmiot</Text>
+          </TouchableOpacity> */}
+
+
         </View>
       </View>
     </SafeAreaView>

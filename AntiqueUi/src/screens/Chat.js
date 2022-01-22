@@ -82,9 +82,24 @@ export const Chat = ({ navigation, props }) => {
           placeholder="Napisz wiadomosc"
         ></TextInput>
 
-        <TouchableOpacity style={styles.sendButton} onPress={() => {}}>
+
+        <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                width: 52,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 4
+              },
+            ]}
+            
+            >
+            <Feather name="send" size={20} color="white"/>
+          </Pressable>
+
+        {/* <TouchableOpacity style={styles.sendButton} onPress={() => {}}>
           <Feather name="send" size={20} color="white"/>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       
     </SafeAreaView>
