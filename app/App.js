@@ -1,17 +1,14 @@
-import React, {useContext} from 'react';
-import {SafeAreaView, Text} from 'react-native';
-import {AuthContext} from './src/context/AuthContext';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 
-const App = () => {
-  const {auth} = useContext(AuthContext);
+import {TabNavigation} from './src/navigation/TabNavigation';
 
-  console.warn(auth);
+import 'react-native-gesture-handler';
 
-  return (
-    <SafeAreaView>
-      <Text>Hello React</Text>
-    </SafeAreaView>
-  );
-};
+const App = () => (
+  <NavigationContainer>
+    <TabNavigation />
+  </NavigationContainer>
+);
 
 export default App;
