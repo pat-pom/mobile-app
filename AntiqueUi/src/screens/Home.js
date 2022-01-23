@@ -20,6 +20,7 @@ import { ProductCardSmall } from "../components/ProductCardSmall";
 import { Notifications } from "./Notifications";
 import { Messages } from "./Messages";
 import { Chat } from "./Chat";
+import axios from "../config/axios";
 const { width, height } = Dimensions.get("window");
 
 const metrics = {
