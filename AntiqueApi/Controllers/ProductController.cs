@@ -35,7 +35,6 @@ namespace AntiqueApi.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [DisableRequestSizeLimit]
         public async Task<IActionResult> AddProduct([FromForm] IList<IFormFile> files, [FromForm] ProductDataDto product)
         {
