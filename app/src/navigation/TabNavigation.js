@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View, Keyboard} from 'react-native';
 
 import {AuthContext} from '../context/AuthContext';
 import {GoBackButton} from '../components/Buttons';
@@ -18,6 +18,22 @@ const Tab = createBottomTabNavigator();
 
 export const TabNavigation = () => {
   const {auth} = useContext(AuthContext);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const showKeyboard = Keyboard.addListener('keyboardDidShow', () =>
+      setIsKeyboardVisible(true),
+    );
+
+    const hideKeyboard = Keyboard.addListener('keyboardDidHide', () =>
+      setIsKeyboardVisible(false),
+    );
+
+    return () => {
+      showKeyboard.remove();
+      hideKeyboard.remove();
+    };
+  }, []);
 
   const screenGuard = (navigation, route) =>
     auth.isAuthenticated
@@ -45,7 +61,7 @@ export const TabNavigation = () => {
   const CustomTabBarButton = ({children, onPress}) => (
     <TouchableOpacity
       style={{
-        top: -25,
+        top: isKeyboardVisible ? 0 : -25,
         justifyContent: 'center',
         alignItems: 'center',
       }}
@@ -78,6 +94,7 @@ export const TabNavigation = () => {
           setTabBarIcon({focused, color, size, route}),
         tabBarShowLabel: false,
         tabBarActiveTintColor: '#474a57',
+        tabBarHideOnKeyboard: true,
       })}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />
