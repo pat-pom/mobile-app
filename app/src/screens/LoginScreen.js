@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import {ScrollView, View, Image, StyleSheet} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {useNavigation} from '@react-navigation/native';
+import Snackbar from 'react-native-snackbar';
 
 import LogoPng from '../assets/images/logo.png';
 import {useTogglePasswordVisibility} from '../hooks/useTogglePasswordVisibility';
@@ -37,8 +38,15 @@ export const LoginScreen = () => {
       setAuth(response.data);
       resetForm();
       navigation.navigate(route.params.name);
+      Snackbar.show({
+        text: 'Login successfull',
+        duration: Snackbar.LENGTH_SHORT,
+      });
     } catch (err) {
-      console.warn(err.response.data);
+      Snackbar.show({
+        text: 'Incorrect login or password',
+        duration: Snackbar.LENGTH_SHORT,
+      });
     } finally {
       setIsLoading(false);
     }
