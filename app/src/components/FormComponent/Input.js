@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
+import {View, TextInput, Pressable, StyleSheet} from 'react-native';
 
 import {Icon} from '../Icon';
 
@@ -8,6 +8,7 @@ export const Input = ({
   placeholder,
   value,
   onChangeText,
+  onIconPress,
   ...rest
 }) => {
   return (
@@ -20,9 +21,9 @@ export const Input = ({
         {...rest}
       />
       {iconName && (
-        <View style={{paddingRight: 16}}>
+        <Pressable style={{paddingRight: 16}} onPress={onIconPress}>
           <Icon name={iconName} size={20} color="#969BAB" />
-        </View>
+        </Pressable>
       )}
     </View>
   );
