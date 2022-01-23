@@ -1,5 +1,7 @@
 ﻿using AntiqueApi.Data;
+using AntiqueApi.Interfaces;
 using AntiqueApi.Models;
+using AntiqueApi.Models.DTOs.Requests;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,30 +15,66 @@ namespace AntiqueApi.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ApiDbContext _context;
+        private readonly IBlobService _blobService;
 
-        public ProductController(ApiDbContext apiDbContext)
+        private const string PRODUCT_IMAGES_STORAGE_CONTAINER = "images";
+
+        public ProductController(ApiDbContext apiDbContext, IBlobService blobService)
         {
             _context = apiDbContext;
+            _blobService = blobService;
         }
 
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetProducts()
         {
-            var products = await _context.Products.Include(x => x.User).ToListAsync();
+            var products = await _context.Products.Include(x => x.User).Include(x => x.Images).ToListAsync();
 
             return Ok(products);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(ProductData productData)
+        [AllowAnonymous]
+        [DisableRequestSizeLimit]
+        public async Task<IActionResult> AddProduct([FromForm] IList<IFormFile> files, [FromForm] ProductDataDto product)
         {
-            if(ModelState.IsValid)
+            if (!files.Any()) return BadRequest();
+
+            if (ModelState.IsValid)
             {
-                await _context.Products.AddAsync(productData);
+                ProductData productData = new ProductData();
+                ICollection<ImagesModel> images = new List<ImagesModel>();
+
+                foreach (var file in files)
+                {
+                    var result = await _blobService.UploadBlobFileAsync(PRODUCT_IMAGES_STORAGE_CONTAINER, file.OpenReadStream(), file.ContentType, file.FileName);
+                    Uri imageUrl = new Uri(result.AbsoluteUri + "/" + file.FileName);
+
+                    ImagesModel imagesModel = new ImagesModel()
+                    {
+                        ImageName = file.FileName,
+                        ImageSize = file.Length,
+                        ImageType = file.ContentType,
+                        ImageUrl = imageUrl,
+                    };
+
+                    images.Add(imagesModel);
+                }
+
+                productData.Images = images;
+                productData.Title = product.Title;
+                productData.Description = product.Description;
+                productData.Category = product.Category;
+                productData.Price = product.Price;
+                productData.State = product.State;
+                productData.Localization = product.Localization;
+                productData.UserId = product.UserId;
+
+                var savedProduct = await _context.Products.AddAsync(productData);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction("GetProduct", new { productData.Id }, productData);
+                return Ok(productData);
             }
 
             return new JsonResult("Something went wrong :(") { StatusCode = 500 };
@@ -46,7 +84,7 @@ namespace AntiqueApi.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetProduct(Guid id)
         {
-            var product = await _context.Products.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _context.Products.Include(x => x.User).Include(x => x.Images).FirstOrDefaultAsync(x => x.Id == id);
 
             if (product == null) { return NotFound(); }
 

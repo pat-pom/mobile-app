@@ -87,13 +87,53 @@ namespace AntiqueApi.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("AntiqueApi.Models.ImagesModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("ImageSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ImageType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ProductDataId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductDataId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("AntiqueApi.Models.ProductData", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Localization")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -281,6 +321,13 @@ namespace AntiqueApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("AntiqueApi.Models.ImagesModel", b =>
+                {
+                    b.HasOne("AntiqueApi.Models.ProductData", null)
+                        .WithMany("Images")
+                        .HasForeignKey("ProductDataId");
+                });
+
             modelBuilder.Entity("AntiqueApi.Models.ProductData", b =>
                 {
                     b.HasOne("AntiqueApi.Models.ApplicationUser", "User")
@@ -350,6 +397,11 @@ namespace AntiqueApi.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("AntiqueApi.Models.ProductData", b =>
+                {
+                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

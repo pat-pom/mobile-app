@@ -62,7 +62,6 @@ export const LoginScreen = () => {
           autoCapitalize="none"
           autoComplete="email"
           keyboardType="email-address"
-          type="email"
           value={email}
           onChangeText={email => setEmail(email)}
         />

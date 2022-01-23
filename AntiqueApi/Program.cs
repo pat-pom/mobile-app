@@ -1,6 +1,9 @@
 using AntiqueApi.Configuration;
 using AntiqueApi.Data;
+using AntiqueApi.Interfaces;
 using AntiqueApi.Models;
+using AntiqueApi.Services;
+using Azure.Storage.Blobs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -43,6 +46,10 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApiDbContext>();
+
+builder.Services.AddScoped(x => new BlobServiceClient(builder.Configuration.GetValue<string>("AzureBlobStorage")));
+
+builder.Services.AddScoped<IBlobService, BlobService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
