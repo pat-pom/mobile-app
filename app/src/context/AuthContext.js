@@ -1,5 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import * as Keychain from 'react-native-keychain';
+import jwtDecode from 'jwt-decode';
 
 const AuthContext = createContext(null);
 const {Provider} = AuthContext;
@@ -24,6 +25,30 @@ const AuthProvider = ({children}) => {
     }
   };
 
+  const setAuth = async authData => {
+    const {Id} = jwtDecode(authData.token);
+
+    setAuthState({
+      token: authData.token,
+      refreshToken: authData.refreshToken,
+      isAuthenticated: true,
+      userId: Id,
+    });
+
+    await Keychain.setGenericPassword(
+      'token',
+      JSON.stringify({
+        token: authData.token,
+        refreshToken: authData.refreshToken,
+      }),
+    );
+  };
+
+  const logout = async () => {
+    await Keychain.resetGenericPassword();
+    setAuthState(initialState);
+  };
+
   useEffect(() => {
     getAuthState();
   }, []);
@@ -32,7 +57,8 @@ const AuthProvider = ({children}) => {
     <Provider
       value={{
         auth,
-        setAuthState,
+        setAuth,
+        logout,
       }}>
       {children}
     </Provider>

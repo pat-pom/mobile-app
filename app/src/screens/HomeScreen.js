@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-export const HomeScreen = ({navigation}) => (
-  <View style={styles.container}>
-    <Text>Home Screen</Text>
-    <Button title="Click Here" onPress={() => alert('Button clicked!')} />
-  </View>
-);
+import {AuthContext} from '../context/AuthContext';
+
+export const HomeScreen = ({navigation}) => {
+  const {logout} = useContext(AuthContext);
+  return (
+    <View style={styles.container}>
+      <Text>Home Screen</Text>
+      <Button title="Click Here" onPress={logout} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

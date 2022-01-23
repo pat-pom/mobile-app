@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {ScrollView, View, Image, StyleSheet} from 'react-native';
+import {useRoute} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 import LogoPng from '../assets/images/logo.png';
 import {useTogglePasswordVisibility} from '../hooks/useTogglePasswordVisibility';
+import {AuthContext} from '../context/AuthContext';
+import {AxiosContext} from '../context/AxiosContext';
 
 import {Input} from '../components/FormComponent/Input';
 import {PrimaryButton} from '../components/Buttons';
@@ -15,8 +19,29 @@ export const LoginScreen = () => {
   const {passwordVisibility, iconName, handlePasswordVisibility} =
     useTogglePasswordVisibility();
 
-  const handleLoginPress = () => {
-    setIsLoading(!isLoading);
+  const {publicAxios} = useContext(AxiosContext);
+  const {setAuth} = useContext(AuthContext);
+
+  const route = useRoute();
+  const navigation = useNavigation();
+
+  const resetForm = () => {
+    setEmail('');
+    setPassword('');
+  };
+
+  const handleLoginPress = async () => {
+    try {
+      setIsLoading(true);
+      const response = await publicAxios.post('/Auth/Login', {email, password});
+      setAuth(response.data);
+      resetForm();
+      navigation.navigate(route.params.name);
+    } catch (err) {
+      console.warn(err.response.data);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

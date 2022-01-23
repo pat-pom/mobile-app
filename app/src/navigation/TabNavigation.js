@@ -38,7 +38,7 @@ export const TabNavigation = () => {
   const screenGuard = (navigation, route) =>
     auth.isAuthenticated
       ? navigation.navigate(route.name)
-      : navigation.navigate('Login');
+      : navigation.navigate('Login', {name: route.name});
 
   const setTabBarIcon = ({focused, color, size, route}) => {
     let iconName;
