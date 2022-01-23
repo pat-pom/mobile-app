@@ -70,7 +70,30 @@ export const ProductPage = () => {
             Dane techniczne: 
           </Text>
           <View style={styles.table}>
-
+              <View style={styles.tableItem}>
+                <Text style={styles.tableCellOne}>wys.</Text>
+                <Text style={styles.tableCellTwo}>53 cm</Text>
+              </View>
+              <View style={styles.tableItem}>
+                <Text style={styles.tableCellOne}>szer.</Text>
+                <Text style={styles.tableCellTwo}>300 cm</Text>
+              </View>
+              <View style={styles.tableItem}>
+                <Text style={styles.tableCellOne}>gł.</Text>
+                <Text style={styles.tableCellTwo}>53 cm</Text>
+              </View>
+              <View style={styles.tableItem}>
+                <Text style={styles.tableCellOne}>waga:</Text>
+                <Text style={styles.tableCellTwo}>100 kg</Text>
+              </View>
+              <View style={styles.tableItem}>
+                <Text style={styles.tableCellOne}>stan:</Text>
+                <Text style={styles.tableCellTwo}>odnowiony</Text>
+              </View>
+              <View style={styles.tableItem}>
+                <Text style={styles.tableCellOne}>uszkodzony:</Text>
+                <Text style={styles.tableCellTwo}>nie</Text>
+              </View>
           </View>
         </View>
         <Text style={styles.titleSmall}>Inne ogłoszenia:</Text>
@@ -128,17 +151,47 @@ const styles = StyleSheet.create({
     height: 333,
     backgroundColor: "#969BAB"
   },
+  table: {
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    marginTop: 16,
+    marginBottom: 8
+  },
+  tableItem: {
+    width: "45%",
+    fontFamily: "Poppins",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 8
+  },
   title: {
     lineHeight: 28,
     fontSize: 18,
     color: "#5B4D48",
     fontFamily: "Poppins"
   },
+  tableCellOne: {
+    color: "#A3AEAB", 
+    fontSize: 14, 
+    lineHeight: 24,
+    fontFamily: "Poppins"
+  },
+  tableCellTwo: {
+    color: "#18191F", 
+    fontSize: 14, 
+    lineHeight: 24,
+    fontFamily: "Poppins"
+  },
   subtitle: {
     lineHeight: 20,
     fontSize: 12,
     color: "#5B4D48",
-    fontFamily: "Poppins"
+    fontFamily: "Poppins",
+    
   },
   price: {
     color: "#2F2622",
