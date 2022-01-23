@@ -13,6 +13,7 @@ import {ChatScreen} from '../screens/ChatScreen';
 import {ProfileScreen} from '../screens/ProfileScreen';
 import {LoginScreen} from '../screens/LoginScreen';
 import {RegisterScreen} from '../screens/RegisterScreen';
+import {JoinScreen} from '../screens/JoinScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +39,7 @@ export const TabNavigation = () => {
   const screenGuard = (navigation, route) =>
     auth.isAuthenticated
       ? navigation.navigate(route.name)
-      : navigation.navigate('Login', {name: route.name});
+      : navigation.navigate('Join', {name: route.name});
 
   const setTabBarIcon = ({focused, color, size, route}) => {
     let iconName;
@@ -142,6 +143,14 @@ export const TabNavigation = () => {
         name="Register"
         component={RegisterScreen}
         options={{
+          tabBarItemStyle: {display: 'none'},
+        }}
+      />
+      <Tab.Screen
+        name="Join"
+        component={JoinScreen}
+        options={{
+          headerShown: false,
           tabBarItemStyle: {display: 'none'},
         }}
       />
