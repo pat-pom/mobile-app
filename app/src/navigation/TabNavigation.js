@@ -77,6 +77,7 @@ export const TabNavigation = () => {
         tabBarIcon: ({focused, color, size}) =>
           setTabBarIcon({focused, color, size, route}),
         tabBarShowLabel: false,
+        tabBarActiveTintColor: '#474a57',
       })}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />

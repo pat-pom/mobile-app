@@ -1,17 +1,41 @@
-import React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView, View, Image, StyleSheet} from 'react-native';
 
-export const LoginScreen = () => (
-  <View style={styles.container}>
-    <Text>Login Screen</Text>
-    <Button title="Click Here" onPress={() => alert('Button clicked!')} />
-  </View>
-);
+import LogoPng from '../assets/images/logo.png';
+
+import {Input} from '../components/FormComponent/Input';
+
+export const LoginScreen = () => {
+  const [email, setEmail] = useState('');
+  return (
+    <SafeAreaView style={styles.container}>
+      <Image source={LogoPng} style={styles.logo} />
+      <View style={styles.form}>
+        <Input
+          iconName="ios-mail-outline"
+          placeholder="E-mail address"
+          autoCapitalize="none"
+          autoComplete="email"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={email => setEmail(email)}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    margin: 24,
+  },
+  logo: {
+    width: 80,
+    height: 115,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  form: {
+    marginTop: 20,
   },
 });
