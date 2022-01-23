@@ -30,9 +30,25 @@ export const Join = () => {
       </View>
 
       <View style={styles.bottom}>
-        <TouchableOpacity style={styles.joinButton} onPress={() => {}}>
+
+      <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                width: metrics.screenWidth - 48,
+                borderRadius: 4,
+                paddingTop: 12,
+                paddingBottom: 12,
+                paddingLeft: 16,
+                paddingRight: 16
+              },
+            ]}
+            >
+            <Text style={styles.joinText}>Chcę dołączyć</Text>
+          </Pressable>
+
+        {/* <TouchableOpacity style={styles.joinButton} onPress={() => {}}>
           <Text style={styles.joinText}>Chcę dołączyć</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TouchableOpacity style={styles.accountButton} onPress={() => {}}>
           <Text style={styles.accountText}>Posiadam konto</Text>

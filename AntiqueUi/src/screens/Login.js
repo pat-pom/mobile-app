@@ -98,9 +98,29 @@ export const Login = () => {
         </View>  
 
       <View style={{alignItems: "center"}}>
-          <Pressable style={styles.submit}>
+
+          
+      <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                height: 52,
+                borderRadius: 4,
+                fontWeight: "400",
+                marginTop: 24,
+                width: metrics.screenWidth - 48,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            ]}
+            >
+            <Text style={styles.text}>Zaloguj się</Text>
+          </Pressable>
+
+          {/* <Pressable style={styles.submit}>
             <Text style={styles.text}>Załóz konto</Text>
-          </Pressable> 
+          </Pressable>  */}
+
+
       </View>
        <View style={{ flexDirection: "row", alignItems: "center", justifyContent:"center" }}>
         <View

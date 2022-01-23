@@ -28,9 +28,27 @@ export const ForgotPassword = () => {
         <Text style={styles.subMessage}>
           Wyślemy link resetujący hasło na Twój e-mail
         </Text>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
+
+        <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                height: 52,
+                borderRadius: 4,
+                fontWeight: "400",
+                marginTop: 24,
+                width: metrics.screenWidth - 48,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            ]}
+            
+            >
+            <Text style={styles.textInsideButton}>Zresetuj hasło</Text>
+          </Pressable>
+
+        {/* <TouchableOpacity style={styles.button} onPress={() => {}}>
           <Text style={styles.textInsideButton}>Zresetuj hasło</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </SafeAreaView>
   );

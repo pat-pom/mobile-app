@@ -14,6 +14,7 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import { UploadPicture } from "../components/UploadPicture/UploadPicture";
 
 import { Dimensions } from "react-native";
+import Feather from 'react-native-vector-icons/Feather';
 const { width, height } = Dimensions.get("window");
 const metrics = {
   screenWidth: width < height ? width : height,
@@ -139,6 +140,15 @@ export const AddProduct = ({ navigation }) => {
               defaultButtonText="Wybierz kategorię"
               dropdownOverlayColor="rgba(0,0,0,0)"
               dropdownIconPosition="right"
+              renderDropdownIcon={(isOpened) => {
+                return (
+                  <Feather
+                    name={isOpened ? "chevron-up" : "chevron-down"}
+                    color={"#969BAB"}
+                    size={16}
+                  />
+                );
+              }}
               dropdownStyle={{
                 borderColor: "#969BAB",
                 borderWidth: 1,
@@ -219,6 +229,15 @@ export const AddProduct = ({ navigation }) => {
               defaultButtonText="Wybierz kategorię"
               dropdownOverlayColor="rgba(0,0,0,0)"
               dropdownIconPosition="right"
+              renderDropdownIcon={(isOpened) => {
+                return (
+                  <Feather
+                    name={isOpened ? "chevron-up" : "chevron-down"}
+                    color={"#969BAB"}
+                    size={16}
+                  />
+                );
+              }}
               dropdownStyle={{
                 borderColor: "#969BAB",
                 borderWidth: 1,
@@ -284,12 +303,29 @@ export const AddProduct = ({ navigation }) => {
             />
           </>
         )}
-        name="loclization"
+        name="localization"
       />
 
-      <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
+      <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                height: 52,
+                borderRadius: 4,
+                fontWeight: "400",
+                marginTop: 24,
+                width: metrics.screenWidth - 48,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            ]}
+            >
+            <Text style={styles.text}>Dodaj</Text>
+          </Pressable>
+
+      {/* <Pressable onPress={handleSubmit(onSubmit)} style={styles.submit}>
         <Text style={styles.text}>Dodaj</Text>
-      </Pressable>
+      </Pressable> */}
+
     </ScrollView>
   );
 };

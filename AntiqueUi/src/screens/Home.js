@@ -20,6 +20,7 @@ import { ProductCardSmall } from "../components/ProductCardSmall";
 import { Notifications } from "./Notifications";
 import { Messages } from "./Messages";
 import { Chat } from "./Chat";
+import axios from "../config/axios";
 const { width, height } = Dimensions.get("window");
 
 const metrics = {
@@ -140,6 +141,7 @@ const styles = StyleSheet.create({
     lineHeight: 48,
     fontFamily: "Poppins",
     fontWeight: "600",
+    color: "#151E1B"
   },
   titleSmall: {
     fontSize: 22,
@@ -147,6 +149,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins",
     fontWeight: "600",
     marginTop: 40,
+    color: "#151E1B"
   },
   forYou: {
     flex: 1,

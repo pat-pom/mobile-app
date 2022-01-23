@@ -12,6 +12,7 @@ import { Login } from '../screens/Login';
 import { ForgotPassword } from '../screens/ForgotPassword';
 import { Checkout } from '../screens/Checkout';
 import { Register } from '../screens/Register';
+import { ProductPage } from '../screens/ProductPage';
 import { Camera } from 'react-feather';
 import { StyleSheet } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
@@ -55,7 +56,7 @@ export function BottomNavigation() {
           return <Feather name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#21A179',
-        tabBarInactiveTintColor: '#969BAB',
+        tabBarInactiveTintColor: '#60716A',
       })}
     >
       <Tab.Screen name="Home" component={Home} />
@@ -63,7 +64,7 @@ export function BottomNavigation() {
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Chat" component={Chat} options={{ headerShown: true, title: "UserName" }}/>
-      {/* <Tab.Screen name="Splash" component={Splash} /> */}
+      <Tab.Screen name="ProductPage" component={ProductPage} />
       {/* <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />*/}
 

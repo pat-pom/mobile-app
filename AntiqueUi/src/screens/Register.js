@@ -144,9 +144,21 @@ export const Register = () => {
         </View>  
 
       <View style={{alignItems: "center"}}>
-          <Pressable style={styles.submit}>
+      <Pressable style={({pressed}) => [
+              {
+                backgroundColor: pressed ? '#064F38' : '#21A179',
+                height: 52,
+                borderRadius: 4,
+                fontWeight: "400",
+                marginTop: 24,
+                width: metrics.screenWidth - 48,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+            ]}
+            >
             <Text style={styles.text}>Załóz konto</Text>
-          </Pressable> 
+          </Pressable>
       </View>
     </SafeAreaView>
   );
