@@ -20,7 +20,10 @@ export const ProductPage = () => {
           style={{ height: 333, width: metrics.screenWidth}}
         />
       </View>
-
+      <View style={styles.iconBar}>
+        <Feather name="arrow-left" size={24} color="#fff"/>
+        <Feather name="share" size={24} color="#fff"/>
+      </View>
       <View style={styles.bottom}>
         <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" }}>
           <View style={{ flexDirection: "column", justifyContent: "space-between", height: 48, marginBottom: 16 }}>
@@ -150,6 +153,15 @@ const styles = StyleSheet.create({
   top: {
     height: 333,
     backgroundColor: "#969BAB"
+  },
+  iconBar:{
+    position: "absolute",
+    marginLeft: 24,
+    // marginRight: 24,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 48,
+    width: metrics.screenWidth - 48
   },
   table: {
     flex: 1,
