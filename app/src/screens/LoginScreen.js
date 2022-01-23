@@ -5,13 +5,19 @@ import LogoPng from '../assets/images/logo.png';
 import {useTogglePasswordVisibility} from '../hooks/useTogglePasswordVisibility';
 
 import {Input} from '../components/FormComponent/Input';
+import {PrimaryButton} from '../components/Buttons';
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const {passwordVisibility, iconName, handlePasswordVisibility} =
     useTogglePasswordVisibility();
+
+  const handleLoginPress = () => {
+    setIsLoading(!isLoading);
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -37,6 +43,11 @@ export const LoginScreen = () => {
           value={password}
           onChangeText={password => setPassword(password)}
         />
+        <PrimaryButton
+          label="Login"
+          loading={isLoading}
+          onPress={handleLoginPress}
+        />
       </View>
     </ScrollView>
   );
@@ -54,7 +65,7 @@ const styles = StyleSheet.create({
   },
   form: {
     marginTop: 20,
-    height: 120,
+    height: 200,
     justifyContent: 'space-between',
   },
 });
