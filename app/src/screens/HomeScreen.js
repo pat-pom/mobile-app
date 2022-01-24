@@ -1,10 +1,25 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
-
-import {AuthContext} from '../context/AuthContext';
+import {AxiosContext} from '../context/AxiosContext';
 
 export const HomeScreen = ({navigation}) => {
-  const {logout} = useContext(AuthContext);
+  const {publicAxios} = useContext(AxiosContext);
+
+  const [product, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(async () => {
+    try {
+      setIsLoading(true);
+      const response = await publicAxios.get('/Product');
+
+      setProducts(response.data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>

@@ -54,7 +54,7 @@ export const AddProductScreen = ({navigation}) => {
       };
 
       const response = await publicAxios.post(
-        'https://localhost:7157/Product',
+        '/Product',
         {
           formData,
           dataToSend,
