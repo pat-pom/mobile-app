@@ -3,6 +3,7 @@ import { Home } from '../screens/Home';
 import { AddProduct } from '../screens/AddProduct';
 import { Profile } from '../screens/Profile';
 import { Splash } from '../screens/Splash';
+import { Geo } from '../screens/Geo';
 import { Notifications } from '../screens/Notifications';
 import { Search } from '../screens/Search';
 import { Chat } from '../screens/Chat';
@@ -64,7 +65,7 @@ export function BottomNavigation() {
       {/* <Tab.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown: true, tabBarShowLabel: false, title: "Odzyskaj hasło"}}/> */}
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Chat" component={Chat} options={{ headerShown: true, title: "UserName" }}/>
-      <Tab.Screen name="ProductPage" component={ProductPage} />
+      <Tab.Screen name="Geo" component={Geo} />
       {/* <Tab.Screen name="Join" component={Join} />
       <Tab.Screen name="Login" component={Login} />*/}
 

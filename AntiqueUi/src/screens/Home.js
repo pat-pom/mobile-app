@@ -21,6 +21,7 @@ import { Notifications } from "./Notifications";
 import { Messages } from "./Messages";
 import { Chat } from "./Chat";
 import axios from "../config/axios";
+//import Geolocation from 'react-native-geolocation-service';
 const { width, height } = Dimensions.get("window");
 
 const metrics = {
@@ -29,6 +30,22 @@ const metrics = {
 };
 
 const Stack = createNativeStackNavigator();
+//const geo = "http://api.geonames.org/findNearestAddressJSON?lat=37.451&lng=-122.18&username=demo"
+
+
+  // if (hasLocationPermission) {
+  //   Geolocation.getCurrentPosition(
+  //       (position) => {
+  //         console.log(position);
+  //       },
+  //       (error) => {
+  //         // See error code charts below.
+  //         console.log(error.code, error.message);
+  //       },
+  //       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+  //   );
+  // }
+
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -36,6 +53,7 @@ const HomeScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <Text style={styles.title}>Hej Aleks</Text>
+          {/* <Text>{position}</Text> */}
           <TouchableOpacity
             style={styles.bell}
             onPress={() => navigation.navigate("Notifications")}
